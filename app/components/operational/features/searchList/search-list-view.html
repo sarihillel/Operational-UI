@@ -1,0 +1,34 @@
+<div class="search-list-warp" >
+    <div class="form-group line-bottom">
+        <input ng-keyup="$event.keyCode == 13 && searchListVm.searchData()"  class="search-input" ng-model="searchListVm.data.filterData.searchText" ou-input-clear >
+        <button class="save-button" ng-click="searchListVm.searchData()"><span ng-bind="'features.search.buttons.search' | translate"></span></button>
+        <a><ou-modal options="::searchListVm.data.advancedOptions"><span ng-bind="'features.search.buttons.advanced' | translate"></span></ou-modal></a>
+    </div>
+    <span ng-repeat="filter in searchListVm.data.filterData.filters track by filter.name">
+        <div class="button-filter">
+            <span class="name">{{filter.title | translate}}</span>
+            <span class="value">{{searchListVm.getFilterValue(filter,true)}}</span>
+            <i class="fa fa-times" ng-click="searchListVm.removeFilter(filter);"></i>
+        </div>
+    </span>
+    <div ng-if="searchListVm.data.showGridData">
+        <div class="result-message" ng-class="{'search-no-results':!searchListVm.data.rowsLength}">
+            <div ng-show="searchListVm.data.rowsLength" class="message">
+                <span ng-bind="searchListVm.data.rowsLength"></span>  {{'features.search.TransactionsFound' | translate }}
+            </div>
+            <span ng-show="!searchListVm.data.rowsLength">
+                <span class="message"> {{'features.search.NoTransactionsFound' | translate }}</span>
+            </span>
+        </div>
+        <div ng-show="searchListVm.data.rowsLength">
+            <div ui-grid="::searchListVm.data.gridOptions"  
+                 ui-grid-auto-resize 
+                 ui-grid-expandable 
+                 ui-grid-pagination 
+                 ui-grid-resize-columns 
+                 ui-grid-save-state
+                 ui-grid-move-columns></div>
+        </div>
+    </div>
+</div>
+

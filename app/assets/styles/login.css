@@ -1,0 +1,140 @@
+.loginBox {
+	border: 1px solid #aec9cf;
+	background-color: #fff;
+	height: 300px;
+	width: 350px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -150px auto auto -175px;
+}
+.loginBox .content {
+	height: 250px;
+	border-top: 4px solid #ff9000;
+	text-align: center;
+}
+.loginBox .content img {
+	display: block;
+	margin: 25px auto;
+}
+.loginBox .content .login-form {
+	margin: auto;
+	width: 250px;
+	display: block;
+	text-align: left;
+}
+.loginBox .content .login-form .selection-list {
+	margin-bottom: 18px;
+	width: inherit;
+}
+.loginBox .content .login-form .selection-list .selection-sink {
+	border-bottom: 1px  solid #d2d7db;
+}
+.loginBox .content .login-form .selection-list .selection-sink:before,
+.loginBox .content .login-form .selection-list .selection-sink:after {
+	background: #d2d7db;
+}
+.loginBox .content .login-form .selection-list .selection-sink input {
+	border: none;
+	font-size: 12px;
+	color: #1074a0;
+}
+.loginBox .content .login-form .selection-list .selection-sink input:focus {
+	outline: none;
+}
+.loginBox .content .login-form .x-button {
+	visibility: hidden;
+}
+.loginBox .content .login-form input:focus + .x-button,
+.loginBox .content .login-form .x-button:hover {
+	visibility: visible;
+}
+.loginBox .content .login-form .x-button:before {
+	content: "x";
+	color: #1074a0;
+	font-family: monospace;
+	font-size: x-large;
+	font-weight: lighter;
+}
+.loginBox .content #optionsWrapper #rememberMeDiv {
+	float: left;
+	display: inline-block;
+}
+.loginBox .content #optionsWrapper #rememberMeDiv input {
+	margin-right: 6px;
+}
+.loginBox .content #optionsWrapper .btn-login {
+	float: right;
+	padding: 5px 22.75px;
+	background-color: #4cc5e2;
+	border: 1px solid #4cc5e2;
+	color: #fff;
+}
+.loginBox .forgotPasswordGroup {
+	border-top: 1px solid #d0d0d0;
+	height: 50px;
+	position: relative;
+}
+.loginBox .forgotPasswordGroup a {
+	color: #4cc5e2;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+.selection-list {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+}
+.selection-list .selection-sink {
+	padding: 0 8px 5px 10px;
+	border-bottom: 1px solid #d1d6da;
+	position: relative;
+}
+.selection-list .selection-sink:before, .selection-list .selection-sink:after {
+	content: "";
+	background: #d1d6da;
+	position: absolute;
+	bottom: 0;
+	height: 30%;
+	width: 1px;
+}
+.selection-list .selection-sink:before {
+	left: 0;
+}
+.selection-list .selection-sink:after {
+	right: 0;
+}
+.selection-list .selection-sink > span:nth-child(1) {
+	padding-right: 30px;
+}
+.selection-list .selection-sink .arrow {
+	position: absolute;
+	top: -5px;
+	right: 5px;
+}
+.selection-list .selection-sink .arrow:before {
+	width: 10px;
+	float: right;
+	margin-right: 5px;
+	margin-left: 5px;
+	display: inline;
+	font-size: 16px;
+	font-family: FontAwesome;
+	height: auto;
+	content: "\f107";
+	font-weight: 300;
+	text-shadow: none;
+	color: #00bfef;
+}
+.selection-list .selection-sink.open .arrow:before {
+	content: "\f106";
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}

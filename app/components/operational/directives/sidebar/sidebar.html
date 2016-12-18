@@ -1,0 +1,19 @@
+<div class="page-sidebar-wrapper" data-ng-class="{'closed': isSideBarClosed}">
+
+    <div class="page-sidebar navbar-collapse" id="page-sidebar" >
+        <ul class="page-sidebar-menu">
+            <li class="start" data-ng-class="{'open': isActiveRoot('operational.home.search')}">  
+                <a ng-click="navigateToOpenOperationalTab('operational.home.search.list')">
+                    <i class="fa fa-exchange"></i>
+                    <span class="title" data-ng-hide="isSideBarClosed">{{'directives.sidebar.operational' | translate }}</span>
+                </a>
+            </li>
+			 <li class="start" data-ng-class="{'open': isActiveRoot('operational.home.task')}">
+                <a ng-click="navigateTo('operational.home.task')">
+                    <i class="fa fa-list"></i>
+                    <span class="title" data-ng-hide="isSideBarClosed">{{'directives.sidebar.taskList' | translate }}</span>
+                </a>
+              </li>
+        </ul>
+    </div>
+</div>

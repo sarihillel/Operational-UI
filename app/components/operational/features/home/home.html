@@ -1,0 +1,23 @@
+<div class="page-header-fixed" data-ng-controller="MainCtrl" data-ng-class="{'dark': !isClear}">
+    <toaster-container></toaster-container>
+    <div class="page-header navbar navbar-fixed-top">
+        <header data-is-side-bar-closed="isSideBarClosed"
+                data-toggle-side-bar="toggleSideBar"
+                data-is-clear="isClear"></header>
+    </div>
+
+    <div class="page-container">
+        <sidebar data-is-side-bar-closed="isSideBarClosed"
+                 data-toggle-side-bar="toggleSideBar"
+                 data-open-table-title="openTableTitle">
+        </sidebar>
+
+        <div class="page-content-wrapper"ng-style="{'width' : 'calc(100% - '+(isSideBarClosed ? '60px': '220px') +')'}">
+            <div class="page-content" >
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+
+</div>
+

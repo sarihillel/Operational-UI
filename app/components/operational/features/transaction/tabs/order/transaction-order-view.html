@@ -1,0 +1,26 @@
+<div class="transction-order-warp">
+    <div class="select-row-arrow" ng-click="transactionOrderVm.changeView(transactionOrderVm.viewsInfo.general)" ng-class="{'active': transactionOrderVm.data.currentView.type==transactionOrderVm.viewsInfo.general }">
+        <span ng-bind="'features.transaction.tabs.order.GeneralInformation' | translate "></span>
+    </div>
+    <br />  
+    <div id="gridSource"  ng-class="{'active': 
+                transactionOrderVm.data.currentView.type == transactionOrderVm.viewsInfo.sourceProduct ||
+                transactionOrderVm.data.currentView.type == transactionOrderVm.viewsInfo.portingInfo
+          }" 
+         ui-grid="::transactionOrderVm.data.gridSourceOptions" 
+         ui-grid-auto-resize
+         ui-grid-tree-view ui-grid-selection class="grid"></div>
+    <br />
+    <br />
+
+    <div id="gridTarget" 
+         ui-grid="::transactionOrderVm.data.gridTargetOptions"  
+         ng-class="{'active': 
+                transactionOrderVm.data.currentView.type==transactionOrderVm.viewsInfo.targetProduct  ||
+                transactionOrderVm.data.currentView.type==transactionOrderVm.viewsInfo.targetOrder}" 
+         ui-grid-auto-resize      
+          ui-grid-tree-view ui-grid-selection class="grid"></div>
+
+
+</div>
+

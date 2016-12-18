@@ -1,0 +1,48 @@
+<div class="loginOverlay" data-ng-controller="loginController">
+    <div class="loginBox">
+        <div class="content">
+
+            <img src="assets/images/loginLogo.png" alt="logo"/>
+
+            <form class="login-form" name="loginForm" ng-submit="loginFormSubmit()">
+                <div class="selection-list">
+                    <div class="selection-sink">
+                        <input id=usnInput type="text" autocomplete="off" data-ng-model="inputsContent.usn"
+                               placeholder="Username" name="username" required />
+                        <span class="arrow x-button" data-ng-click="inputsContent.usn=''"
+                              ng-show="inputsContent.usn.length>0"></span>
+                    </div>
+                </div>
+
+                <div class="selection-list">
+                    <div class="selection-sink">
+                        <input id=pwdInput type="password" autocomplete="off" placeholder="Password" name="password"
+                               data-ng-model="inputsContent.pwd" required
+                                />
+                        <span class="arrow x-button"
+                              data-ng-click="inputsContent.pwd=''"
+                              data-ng-show="inputsContent.pwd.length>0"></span>
+                    </div>
+                </div>
+			<div class="error-container">
+				<div
+					class="error-msg"
+					ng-show="loginFormErrorMessage"
+					>
+						{{loginFormErrorMessage}}
+				</div>
+			</div>
+                <div id="optionsWrapper" class="clearfix">
+                    <div id="rememberMeDiv">
+                        <input id="rememberMeChk" type="checkbox" name="remember" value="1"/>
+                        <label for="rememberMeChk" class="rememberme check">Remember Me</label>
+                    </div>
+                    <button type="submit" class="">Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="forgotPasswordGroup">
+            <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="selection-list">
+    <div class="selection-sink" data-ng-click="toggleSelectionList()" data-ng-class="{'open': isDropdownVisible}">
+        <span> <img ng-if="isUsernameSelectionList" ng-src="{{userImageUrl}}"/> {{selected}} </span>
+        <span class="arrow"></span>
+    </div>
+<!-- replaced with row below by A.B.
+    <div class="selection-list-options" data-ng-show="isDropdownVisible">
+-->
+    <div class="selection-list-options" data-ng-show="isDropdownVisible" data-ng-click="toggleSelectionList()">
+        <ng-transclude>
+    </div>
+</div>

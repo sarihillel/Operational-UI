@@ -1,0 +1,35 @@
+<div class="tabs-wapper row">
+    <tabset class="tab-container" type="{{::type}}" vertical="{{::vertical}}"
+            justified="{{::justified}}"
+            ng-class="class">
+
+        <tab ng-repeat="tab in tabs | limitTo:options.limit track by $index"
+             class="tab tab-item  {{::tab.class}}"
+             ng-style="{'max-width': 'calc((100% - ' + (tabs.length>options.limit?50:0) +  'px)/'+options.limit+')'}"
+             disable="tab.disable"
+             ng-click="go(tab)" active="tab.active">
+            <tab-heading>
+                <div class="triangle" ng-if="tab.isTriangle">
+                    <div class="number">{{tab.numberTriangle}}</div>
+                </div>
+                <span ng-click="removeTab(tab,$event)" ng-if="tab.isClose">
+                    <i class="closeX"></i>
+                </span>
+                <span class="title">{{tab.heading}}</span>
+            </tab-heading>
+        </tab>
+        <tab class="tab tab-item tab-item-next" disable="true"
+             ng-show="options.limit<tabs.length"
+             ng-style="{'max-width': (tabs.length>options.limit?'50':'0') + 'px'}">
+            <tab-heading>
+                <ou-popover-list ou-popover-limit-from="options.limit"
+                                 ou-popover-toggle-item="go"
+                                 ou-popover-item-value="heading"
+                                 ou-popover-list="tabs"></ou-popover-list>
+            </tab-heading>
+        </tab>
+    </tabset>
+</div>
+<div class="view-wrapper tabs">
+    <ui-view></ui-view>
+</div> 

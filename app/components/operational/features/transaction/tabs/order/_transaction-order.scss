@@ -1,0 +1,33 @@
+.transction-order-warp {
+    #gridSource {
+        .ui-grid-tree-base-header:not(.selectable) {
+            cursor: not-allowed;
+        }
+
+        .ProductUniqueCodeHeader .ui-grid-cell-contents:before {
+            content: "";
+            display: inline-block;
+            background: url(/assets/images/source.png) 0 0 no-repeat;
+            width: 20px;
+            height: 15px;
+            margin-right: 5px;
+        }
+    }
+
+    #gridTarget {
+        .T_ProductUniqueCode .ui-grid-cell-contents:before {
+            content: "";
+            display: inline-block;
+            background: url(/assets/images/target.png) 0 0 no-repeat;
+            width: 20px;
+            height: 15px;
+            margin-right: 5px;
+        }
+    }
+
+    @media (max-height: 800px) {
+        .grid {
+            height: 180px;
+        }
+    }
+}

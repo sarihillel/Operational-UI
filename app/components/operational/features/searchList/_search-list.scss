@@ -1,0 +1,130 @@
+.search-list-warp {
+    .search-input {
+        min-width: 300px;
+        width: 100%;
+        height: 32px;
+        /*margin: 10px 10px 10px 0;*/
+    }
+
+    input, button {
+        &:hover, &:focus {
+            outline-color: $search-list-input-focus-outline-color;
+        }
+    }
+
+
+    .button-filter {
+        border-radius: 25px;
+        border: 1px solid $search-list-button-filter-color;
+        color: $search-list-button-filter-color;
+        padding: 3px 3px 3px 10px;
+        min-width: 100px;
+        display: inline-block;
+        margin: 5px;
+
+        .name {
+            font-weight: normal;
+
+            &:after {
+                content: ':';
+            }
+        }
+
+        .value {
+            font-weight: bold;
+        }
+
+        i {
+            cursor: pointer;
+            width: 20px;
+            text-align: center;
+        }
+    }
+
+
+    &:hover, &:focus {
+        outline-color: transparent;
+    }
+
+    .form-group {
+        padding-bottom: 15px;
+
+        input, button, a {
+            margin-left: 25px;
+        }
+
+        .search-input {
+            margin-left: 0px;
+        }
+    }
+
+    .line-bottom {
+        border-bottom: 1px solid $search-list-line-bottom-color;
+    }
+
+    .ui-grid-menu .ui-grid-menu-inner ul li {
+        display: block;
+    }
+
+    .ui-grid-row:hover .ui-grid-cell {
+        cursor: pointer;
+    }
+
+    .result-message {
+        margin-top: 35px;
+        margin-bottom: 15px;
+
+        &.search-no-results:before {
+            content: url(#{$images-url}/search-no-results.png);
+        }
+
+        .message {
+            padding-left: 5px;
+            vertical-align: top;
+        }
+    }
+
+    .isExpanded .ui-grid-cell {
+        border-bottom: none;
+    }
+
+    .ui-grid-cell .ui-grid-cell-contents {
+        color: $search-list-font-cell-color;
+    }
+
+    .ui-grid-pager-panel {
+        border-top: 2px solid $search-list-border-bootom-color;
+        padding-top: 20px;
+
+        .ui-grid-pager-container {
+            position: absolute;
+            left: 40%;
+            top: 50%;
+        }
+    }
+
+    .row-expanded {
+        border-left: 4px solid $search-list-expand-border-left-color;
+        margin-left: 15px;
+        //padding-left: 15px;
+        height: 100%;
+        border-bottom: 1px solid $search-list-border-bootom-color;
+
+        .form-group {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            background-color: $search-list-border-expand-color;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+
+            .control-label {
+                font-weight: normal;
+            }
+
+            .form-control-static {
+                font-weight: bold;
+            }
+        }
+    }
+}

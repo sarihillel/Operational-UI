@@ -1,0 +1,188 @@
+.transction-warp {
+    min-height: 100%;
+    height: 100%;
+    width: calc(100% - 15px);
+
+    @mixin selection-arrow {
+        background-color: $transaction-tabs-row-selection;
+        color: $transaction-tabs-row-selection-color;
+        position: relative;
+        width: calc(100% - 20px);
+
+        &:after, &:before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 50%;
+            left: 100%;
+        }
+
+        &:after {
+            bottom: 0;
+            background: linear-gradient(to right bottom, $transaction-tabs-row-selection 50%, transparent 50%);
+        }
+
+        &:before {
+            top: 0;
+            background: linear-gradient(to right top, $transaction-tabs-row-selection 50%, transparent 50%);
+        }
+    }
+
+    height: 100%;
+
+    .transaction-header {
+        height: 65px;
+        margin-left: 15px;
+        margin-bottom: 10px;
+
+        .row-title {
+            margin-bottom: 5px;
+
+            .header-title {
+                font-size: 20px;
+                display: inline-block;
+                float: left;
+
+                .error {
+                    vertical-align: middle;
+                    visibility: visible;
+                    display: none;
+
+                    &.is-error {
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .header-buttons {
+                float: right;
+                right: 0;
+                padding-left: 5px;
+            }
+        }
+
+        .transaction-info-wrapper {
+            font-size: 15px;
+            font-weight: normal !important;
+            margin-bottom: 3px;
+
+            .trans-info-details-label {
+                font-weight: normal !important;
+            }
+
+            .trans-info-detail-value {
+                font-weight: bold;
+                margin-right: 40px;
+            }
+
+            .trans-info-details-link {
+                color: $aqua-color;
+                cursor: pointer;
+            }
+
+            .more-details-info-wrapper {
+                display: inline-block;
+            }
+
+            .more-details-last {
+                margin-bottom: 10px;
+            }
+
+            .more-details-first {
+                margin-top: 10px;
+            }
+
+            .more-details-info {
+                display: inline-block;
+                color: black;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .border-empty-button.trans-button {
+        margin-right: 5px;
+    }
+
+    .transaction-content {
+        height: calc(100% - 67px);
+        border-top: 1px solid $transaction-content-top-border;
+
+        .transaction-tabs {
+            min-height: 100%;
+            height: 100%;
+            padding-right: 0px;
+            
+            .select-row-arrow {
+                &.active {
+                    @include selection-arrow;
+                }
+
+                line-height: 32px;
+                vertical-align: middle;
+                width: 100%;
+                cursor: pointer;
+                padding-left: 10px;
+            }
+            .grid{
+                margin-right:5px;
+            }
+            .ui-grid-cell, .ui-grid-row .ui-grid-cell.ui-grid-row-header-cell {
+                border: 0px;
+            }
+
+            .ui-grid-row:hover .ui-grid-cell.ui-grid-disable-selection {
+                background-color: transparent;
+            }
+
+            .ui-grid-row {
+                .ui-grid-tree-base-header.selectable {
+                    cursor: pointer;
+                }
+            }
+
+            .active {
+                .ui-grid-row.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell {
+                    background-color: $transaction-tabs-row-selection;
+
+                    .ui-grid-cell-contents {
+                        color: $transaction-tabs-row-selection-color;
+                    }
+                }
+            }
+
+            .ui-grid-row.ui-grid-row-selected > [ui-grid-row] > .ui-grid-cell {
+                background-color: $transaction-tabs-row-parent-selection;
+
+                .ui-grid-cell-contents {
+                    color: inherit;
+                }
+            }
+        }
+
+        .transaction-details {
+            min-height: 100%;
+            border-left: 1px solid $border-color;
+
+            .main-title {
+                padding: 30px 0 0 40px;
+                font-size: 18px;
+            }
+
+            .ui-grid {
+              max-height: 250px;
+              height: 100% !important;
+            }
+
+            .ui-grid > .ui-grid-contents-wrapper > .ui-grid-render-container > .ui-grid-viewport {
+                min-height: 50px;
+                max-height: 221px;
+                height: 100%;
+            } 
+
+            i.fa-edit {
+                padding-right: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+﻿<div class='row row-expanded'>
+    <div class="form-inline form-group col-xs-4" ng-repeat='colDef in columnDefs track by $index'>
+        <label class="control-label  col-xs-7">{{::colDef.displayName||colDef.name}}:</label>
+        <span class="form-control-static col-xs-5">{{::grid.getCellDisplayValue(row,colDef)}}</span>
+    </div> 
+</div> 
+      

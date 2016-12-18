@@ -1,0 +1,8 @@
+.transaction-customer-warp {
+    height: 100%;
+    #gridCustomer {
+        .ui-grid-tree-base-header:not(.selectable) {
+            cursor: not-allowed;
+        }
+    }
+}

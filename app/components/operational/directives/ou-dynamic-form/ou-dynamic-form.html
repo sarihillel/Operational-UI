@@ -1,0 +1,78 @@
+<div class="dynamic-form" >
+
+<form class="form-horizontal col-sm-12" name="dynamicForm" role="form">
+
+	<div ng-repeat="field in model.fields track by $index">
+
+		<div ng-switch="field.type">
+
+		<div ng-switch-when="string" class="form-group">
+			<label name="field.label" class="control-label col-sm-3">{{field.label}}</label>
+			<div class="col-sm-9">
+			<input type="text" placeholder="{{field.placeholder}}" class="form-control" name="$index"
+				   ng-model="field.value"
+				   minlength="{{field.minLength}}"
+				   maxlength="{{field.maxLength}}">
+			</div>
+		</div> 
+
+		<div ng-switch-when="number" class="form-group">
+			<label name="field.label" class="control-label col-sm-3">{{field.label}}</label>
+			<div class="col-sm-9">
+			<input type="number" class="form-control"
+				   placeholder="{{field.placeholder}}"
+				   min="{{field.min}}" m
+				   ax="{{field.max}}"
+				   ng-model="field.value">
+			</div>
+		</div>
+
+		<div ng-switch-when="email" class="form-group">
+			<label name="field.label" class="control-label col-sm-3">{{field.label}}</label>
+			<div class="col-sm-9">
+				<input type="email" class="form-control"
+					   placeholder="{{field.placeholder}}"
+					   ng-model="field.value">
+			</div>
+		</div>
+
+		<div ng-switch-when="checkbox" class="form-group">
+			<!--<label name="field.label">{{field.label}}</label>-->
+			<label><input type="checkbox" placeholder="field.placeholder" ng-model="field.value"> {{field.label}}</label>
+		</div>
+
+		<div ng-switch-when="radio" class="form-group">
+			<div ng-repeat="radio in field.radioOptions">
+				<!--<label name="radio.label">{{radio.label}}</label>-->
+				<input type="radio" ng-value="radio.value" ng-model="field.value"> {{radio.label}}
+			</div>
+
+		</div>
+
+		<div ng-switch-when="select" class="form-group">
+			<label name="field.label" class="control-label col-sm-3">{{field.label}}</label>
+			<div class="col-sm-9">
+				<select class="form-control"
+						ng-change="log(field.value)"
+						ng-options="option.code as option.label for option in field.selectOptions"
+						ng-model="field.value">
+					<!--<option ng-repeat="option in field.selectOptions"-->
+							<!--ng-class="{'selected': option.value == field.value}">-->
+						<!--{{option.label}}-->
+					<!--</option>-->
+				</select>
+			</div>
+		</div>
+
+		<div ng-switch-when="text" class="form-group">
+				<label name="field.label" class="control-label col-sm-3">{{field.label}}</label>
+				<div class="col-sm-9">
+					<textarea class="form-control"
+						   placeholder="{{field.placeholder}}"
+						   ng-model="field.value"></textarea>
+				</div>
+			</div>
+	</div>
+	</div>
+</form>
+</div>

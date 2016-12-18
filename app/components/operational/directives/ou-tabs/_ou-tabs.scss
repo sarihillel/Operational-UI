@@ -1,0 +1,120 @@
+.tabs-wapper {
+    width: 100%;
+    margin: 0;
+    height: $tabs-height;
+
+    .nav-tabs {
+        margin-bottom: 0;
+    }
+
+    ul, ul.nav-tabs-justified, .nav, .nav-tabs {
+        list-style: none;
+        padding: 0;
+        display: flex;
+
+        li {
+            border: 1px solid $tabs-border-color;
+            border-top: none;
+            padding: 10px 10px 10px 10px;
+            background-color: $tabs-bg-color;
+            /*min-width: 129px;*/
+            height: $tabs-height;
+            line-height: 1;
+            text-align: left;
+            vertical-align: middle;
+            cursor: pointer;
+            width: 100%;
+
+            &.tab-item-next {
+                background: $tabs-bg-color url("/assets/images/more-main-tab.png") no-repeat center;
+                z-index: 100;
+                flex-grow: 1;
+            }
+
+            .closeX:before {
+                font-size: 20px;
+                font-family: FontAwesome;
+                height: auto;
+                content: "\00d7";
+                font-weight: 300;
+                text-shadow: none;
+                color: $operatinal-color-icons;
+                cursor: pointer;
+                position: absolute;
+                top: -12px;
+                right: -8px;
+            }
+
+
+            .triangle {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 30px 30px 0;
+                border-color: transparent red transparent transparent;
+                line-height: 15px;
+                position: absolute;
+                z-index: 1000;
+                right: -14px;
+                font-size: 15px;
+                top: -10px;
+
+                .number {
+                    position: absolute;
+                    right: -25px;
+                    top: 2px;
+                    font-size: 12px;
+                    color: white;
+                }
+            }
+
+
+            > a {
+                font-size: 14px;
+                color: $tabs-font-color;
+                text-decoration: none;
+                border: 0;
+                text-align: left;
+                padding: 0;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: none;
+                    border: 0;
+                    background-color: inherit;
+                    background: transparent;
+                }
+
+                .title {
+                    font-size: 15px;
+                    text-transform: capitalize;
+                    cursor: pointer;
+                    position: relative;
+                    top: 12px;
+                }
+            }
+
+            &.active {
+                background-color: $tabs-active-bg-color;
+                border-bottom: none;
+                border-top: 5px solid $tabs-border-top-color;
+
+                a {
+                    color: $tabs-active-font-color;
+                    border: 0;
+                    text-align: left;
+                }
+
+                .triangle {
+                    top: -15px;
+                }
+            }
+        }
+    }
+}
+
+.view-wrapper.tabs {
+    margin:0px;
+    padding: 15px 0px;
+    height: calc(100% - #{$tabs-height}) !important;
+}

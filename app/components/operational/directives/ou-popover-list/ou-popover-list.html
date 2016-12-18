@@ -1,0 +1,10 @@
+﻿<div class="selection-list ou-popover">
+    <div class="selection-sink " data-ng-click="toggleSelectionList()" >
+        <span ng-class="class"></span>
+    </div>
+   <div class="selection-list-options" data-ng-show="visible" data-ng-click="toggleSelectionList()">
+        <span ng-repeat="item in list  | limitTo: (limitTo||list.length) : limitFrom " ng-click="toggleItem(item,$index,$event)">
+            {{item[itemValue]}}
+        </span>
+    </div>
+</div>

@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Color variables
+   ========================================================================== */
+
+// Light Theme:
+
+
+$aqua-color: #4cc5e2;
+$yellow-color: #ff930b;
+$grey-color: grey;
+$grey-color2:#d1d6da;
+$white-color: white;
+$black-color: 4a5360;
+
+/* Main colors*/
+$page-bg-color: #ffffff;
+$input-color: #4a5360;
+$datepicker-border-color: $grey-color2;
+$selection-list-border-color:$grey-color2;
+$operatinal-color-icons: #4cc5e2;
+$border-color: $grey-color2;
+
+
+/* Selection Sink Colors */
+$selection-sink-font-color: #49535f;
+$selection-sink-border-color: #d1d6da;
+$selection-sink-arrow-color: #00bfef;
+$selection-sink-dropdown-bg-color: #373d45;
+$selection-sink-dropdown-font-color: #919dad;
+$selection-sink-dropdown-border-color: #292d33;
+$selection-sink-dropdown-hover-bg-color: #292d33;
+$selection-sink-dropdown-hover-font-color: #fff;
+$selection-sink-dropdown-shadow-color: rgba(0,0,0,.35);
+
+/* Header Colors */
+$header-logo-bg-color: #4cc5e2;
+$header-logo-border-color: #262b31;
+$header-bg-color: #fff;
+$header-border-color: #e7e9ec;
+$header-breadcrumbs-font-color: #4a5360;
+$header-username-font-color: #4cc5e2;
+
+/* Sidebar Colors */
+$sidebar-bg-color: #373d46;
+$sidebar-submenu-bg-color: #292d34;
+$sidebar-font-color: #fff;
+$sidebar-active-font-color: #4cc5e2;
+$sidebar-submenu-font-color: #b7c2d1;
+
+/* Tabs Colors */
+$tabs-bg-color: #f1f4f9;
+$tabs-active-bg-color: #fff;
+$tabs-font-color: #2e5083;
+$tabs-active-font-color: #ff930b;
+$tabs-border-color: #dedede;
+$tabs-header-bg-color: #fafafa;
+$tabs-border-top-color:$yellow-color;
+
+/* Table View Colors */
+$table-buttons-border-color: #4cc5e2;
+$table-buttons-font-color: #fff;
+$table-buttons-bg-color: #4cc5e2;
+$table-border-color: #dedede;
+
+/* Modal Colors */
+$modal-overlay-color: #4a5360;
+$modal-header-bg-color: #4cc5e2;
+$modal-wrapper-bg-color: darken(#fff,.5%);
+
+
+/* Script Runner */
+$search-list-header-bg-color: #fafafa;
+$search-list-border-color: #aec9cf;
+$search-list-font-color: #2e5083;
+$search-list-error-font-color: #e12601;
+$search-list-cancel-color: #5b779e;
+$search-list-main-bg-color: #f1f4f9;
+$search-list-button-color: #4cc5e2;
+$search-list-button-font-color: #fff;
+$search-list-output-message-color: #7c838b;
+
+/* Login Colors */
+$login-bg-color: #eceef1;
+$login-heading-color: #4db3a5;
+$login-input-text-color: #8290a3;
+$login-input-bg-color: #dde3ec;
+$login-input-border-color: #dde3ec;
+$login-input-focus-border-color: #c3ccda;
+$login-input-placeholder-color: #8290a3;
+$login-submit-btn-font-color: #4cc5e2;
+$login-submit-btn-bg-color: #428bca;
+
+
+/* Search list */
+$search-list-expand-border-left-color: #00bfef;
+$search-list-border-bootom-color: #dddddd;
+$search-list-font-cell-color: lighten(black,30%);
+$search-list-border-expand-color: darken(#ffffff,1%);
+$search-list-input-focus-outline-color: #4cc5e2;
+$search-list-button-filter-color: #4cc5e2;
+$search-list-line-bottom-color: #e7e9ec;
+
+/* Transaction*/
+$transaction-content-top-border: #d1d6da;
+$transaction-details-left-border: #d1d6da;
+$transaction-tabs-row-selection: $yellow-color;
+$transaction-tabs-row-selection-color:$white-color;
+$transaction-tabs-row-parent-selection:lighten($yellow-color,30%);
+$transaction-tabs-row-parent-selection-color:$black-color;
+
+/*date picker*/
+$date-picker-arrow-color: $aqua-color;
+$date-picker-headers-color: $grey-color;
+$date-picker-border-color: $grey-color;
+
+
+//Dark Theme:
+
+/* Main colors*/
+$dark-page-bg-color: #272d31;
+
+/* Selection Sink Colors */
+$dark-selection-sink-font-color: #7c838b;
+$dark-selection-sink-border-color: #7c838b;
+$dark-selection-sink-arrow-color: #00bfef;
+$dark-selection-sink-dropdown-bg-color: #e6eaed;
+$dark-selection-sink-dropdown-font-color: #343b3f;
+$dark-selection-sink-dropdown-border-color: #c8cfd4;
+$dark-selection-sink-dropdown-hover-bg-color: #00efd6;
+$dark-selection-sink-dropdown-hover-font-color: #343b3f;
+$dark-selection-sink-dropdown-shadow-color: rgba(0,0,0,.35);
+
+/* Header Colors */
+$dark-header-logo-bg-color: #ffffff;
+$dark-header-logo-border-color: #14171a;
+$dark-header-bg-color: #ffffff;
+$dark-header-border-color: #353b3e;
+$dark-header-breadcrumbs-font-color: #242c31;
+
+/* Sidebar Colors */
+$dark-sidebar-bg-color: #1c2125;
+$dark-sidebar-submenu-bg-color: #14191c;
+$dark-sidebar-font-color: #a4a4a4;
+$dark-sidebar-active-font-color: #00efd5;
+$dark-sidebar-submenu-font-color: #7a7a7a;
+
+/* Tabs Colors */
+$dark-tabs-bg-color: #272d31;
+$dark-tabs-active-bg-color: #343b3f;
+$dark-tabs-font-color: #7c838b;
+$dark-tabs-active-font-color: #00efd5;
+$dark-tabs-border-color: #3a4145;
+$dark-tabs-header-bg-color: #343b3f;
+
+/* Table View Colors */
+$dark-table-buttons-font-color: #13191b;
+$dark-table-buttons-border-color: #4cc5e2;
+$dark-table-buttons-bg-color: #4cc5e2;
+$dark-table-border-color: #14191c;
+$dark-table-header-text: #7c838b;
+
+
+/* Modal Colors */
+$dark-modal-overlay-color: #4a5360;
+$dark-modal-header-bg-color: #fff;
+$dark-modal-wrapper-bg-color: #343b3f;
+
+$group-expand-color: #4cc5e2;
+
+/* Buttons Colors */
+$button-empty-font-color-active: #fff;
+$button-empty-font-color: #4cc5e2;
+$button-empty-border-color: #4cc5e2;
+$button-empty-background-color-active: #4cc5e2;
+
+
+

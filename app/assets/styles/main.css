@@ -1,0 +1,2180 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* */
+/* ==========================================================================
+   MIXINS & FUNCTIONS
+   ========================================================================== */
+/* ==========================================================================
+   Color variables
+   ========================================================================== */
+/* Main colors*/
+/* Selection Sink Colors */
+/* Header Colors */
+/* Sidebar Colors */
+/* Tabs Colors */
+/* Table View Colors */
+/* Script Runner */
+/* Login Colors */
+/* Main colors*/
+/* Selection Sink Colors */
+/* Header Colors */
+/* Sidebar Colors */
+/* Tabs Colors */
+/* Table View Colors */
+/* Script Runner */
+/* line 1, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.selection-list {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+    /* line 6, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+    .selection-list .selection-sink {
+        padding: 0 8px 5px 10px;
+        border-bottom: 1px solid #d1d6da;
+        position: relative;
+    }
+        /* line 11, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        .selection-list .selection-sink:before, .selection-list .selection-sink:after {
+            content: "";
+            background: #d1d6da;
+            position: absolute;
+            bottom: 0;
+            height: 30%;
+            width: 1px;
+        }
+        /* line 20, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        .selection-list .selection-sink:before {
+            left: 0;
+        }
+        /* line 24, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        .selection-list .selection-sink:after {
+            right: 0;
+        }
+        /* line 28, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        .selection-list .selection-sink > span:nth-child(1) {
+            padding-right: 30px;
+        }
+        /* line 32, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        .selection-list .selection-sink .arrow {
+            position: absolute;
+            top: 0;
+            right: 5px;
+        }
+            /* line 37, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+            .selection-list .selection-sink .arrow:before {
+                width: 10px;
+                float: right;
+                margin-right: 5px;
+                margin-left: 5px;
+                display: inline;
+                font-size: 16px;
+                font-family: FontAwesome;
+                height: auto;
+                content: "\f107";
+                font-weight: 300;
+                text-shadow: none;
+                color: #00bfef;
+            }
+        /* line 52, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        .selection-list .selection-sink.open .arrow:before {
+            content: "\f106";
+        }
+    /* line 57, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+    .selection-list .selection-list-options {
+        position: absolute;
+        top: 29px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #373d45;
+        border: 1px solid #292d33;
+        box-sizing: 0 3px 7px rgba(0, 0, 0, 0.35);
+        color: #919dad;
+    }
+        /* line 70, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        .selection-list .selection-list-options span {
+            display: block;
+            padding: 10px;
+            font-size: 12px;
+        }
+            /* line 75, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+            .selection-list .selection-list-options span:hover {
+                background-color: #292d33;
+                color: #fff;
+            }
+
+/* line 84, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+body.dark .selection-list {
+    color: #7c838b;
+}
+    /* line 87, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+    body.dark .selection-list .selection-sink {
+        border-bottom: 1px solid #7c838b;
+    }
+        /* line 90, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        body.dark .selection-list .selection-sink:before, body.dark .selection-list .selection-sink:after {
+            background: #7c838b;
+        }
+        /* line 94, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        body.dark .selection-list .selection-sink .arrow:before {
+            color: #00bfef;
+        }
+    /* line 99, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+    body.dark .selection-list .selection-list-options {
+        background-color: #e6eaed;
+        border: 1px solid #c8cfd4;
+        box-sizing: 0 3px 7px rgba(0, 0, 0, 0.35);
+        color: #343b3f;
+    }
+        /* line 109, ../../app/skyportal/directives/dropdown-list/_dropdown-list.scss */
+        body.dark .selection-list .selection-list-options span:hover {
+            background-color: #00efd6;
+            color: #343b3f;
+        }
+
+/* line 1, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+.table-filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    padding: 150px;
+    color: #4a5360;
+}
+    /* line 12, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+    .table-filter-overlay .table-filter-wrapper {
+        position: relative;
+        min-height: 440px;
+        width: 710px;
+        padding: 0;
+        background-color: #fff;
+        overflow: auto;
+        margin: 0 auto;
+    }
+        /* line 21, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        .table-filter-overlay .table-filter-wrapper .table-filter-header {
+            height: 50px;
+            padding: 15px;
+            font-size: 20px;
+            background: #4cc5e2;
+            text-transform: uppercase;
+        }
+        /* line 33, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        .table-filter-overlay .table-filter-wrapper #mainDiv #content #contentHeader {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 15px;
+            overflow: hidden;
+            background: #f1f4f9;
+        }
+            /* line 40, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #mainDiv #content #contentHeader input[type="radio"] {
+                display: none;
+            }
+                /* line 43, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #content #contentHeader input[type="radio"] + label {
+                    margin-right: 20px;
+                }
+                    /* line 45, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                    .table-filter-overlay .table-filter-wrapper #mainDiv #content #contentHeader input[type="radio"] + label span {
+                        display: inline-block;
+                        width: 16px;
+                        height: 20px;
+                        cursor: pointer;
+                        background: url("../../assets/images/radio_buttons.png") 0 0 no-repeat;
+                        vertical-align: middle;
+                    }
+                /* line 55, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #content #contentHeader input[type="radio"]:checked + label span {
+                    background-position-x: -18px;
+                }
+            /* line 59, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #mainDiv #content #contentHeader #matchAnyAll {
+                display: inline;
+                float: right;
+            }
+        /* line 66, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv {
+            -webkit-transition: all ease-in-out 0.2s;
+            transition: all ease-in-out 0.2s;
+            padding: 15px 15px 5px;
+            height: 40px;
+        }
+            /* line 72, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv.highlighted {
+                background-color: #ddffdd;
+                -webkit-transition: all ease-in-out 0.4s;
+                transition: all ease-in-out 0.4s;
+            }
+            /* line 77, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper {
+                width: 100%;
+            }
+                /* line 80, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper .valueInput, .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper .caseSensitive {
+                    vertical-align: bottom;
+                    width: 20%;
+                }
+                    /* line 83, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                    .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper .valueInput > *, .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper .caseSensitive > * {
+                        vertical-align: bottom;
+                    }
+                /* line 89, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper .valueInput {
+                    background-color: white;
+                }
+                /* line 93, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper .valueInput, .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper .caseSensitive {
+                    display: inline;
+                }
+                /* line 96, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper input[type="checkbox"] {
+                    margin-left: 15px;
+                    width: 22px;
+                    height: 22px;
+                }
+                /* line 101, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper label {
+                    margin-bottom: 0;
+                }
+            /* line 106, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv sub-filter {
+                width: 97%;
+                display: inline-block;
+            }
+            /* line 111, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .delete-filter {
+                display: inline-block;
+                width: 12px;
+                height: 15px;
+                margin-top: 10px;
+                float: right;
+                background: url("../../assets/images/delete_button.png") 0 0 no-repeat;
+                cursor: pointer;
+            }
+        /* line 123, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        .table-filter-overlay .table-filter-wrapper #mainDiv #content #datepicker {
+            border: 1px solid #d1d6da;
+        }
+        /* line 128, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        .table-filter-overlay .table-filter-wrapper #mainDiv #addFilterButton {
+            display: inline-block;
+            float: right;
+            text-align: center;
+            font-size: 16px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 1px solid #4a5360;
+            cursor: pointer;
+        }
+        /* line 142, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        .table-filter-overlay .table-filter-wrapper #mainDiv #buttons {
+            float: right;
+            width: 10%;
+            height: 100%;
+        }
+            /* line 147, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #mainDiv #buttons button {
+                display: block;
+                margin-bottom: 15px;
+                margin-left: auto;
+            }
+                /* line 153, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #buttons button#removeFilterButton i {
+                    font-size: 25px;
+                    color: red;
+                }
+                /* line 162, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+                .table-filter-overlay .table-filter-wrapper #mainDiv #buttons button.close {
+                    float: none;
+                    margin-bottom: 50px;
+                }
+        /* line 173, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        .table-filter-overlay .table-filter-wrapper label {
+            font-weight: normal;
+        }
+        /* line 177, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        .table-filter-overlay .table-filter-wrapper #bottomDiv {
+            margin-top: 15px;
+            position: absolute;
+            right: 15px;
+            bottom: 15px;
+        }
+            /* line 183, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #bottomDiv #okCancelDiv {
+                float: right;
+            }
+            /* line 187, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+            .table-filter-overlay .table-filter-wrapper #bottomDiv button {
+                width: 82px;
+                height: 28px;
+            }
+
+/* line 195, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+.pika-single {
+    z-index: 10001;
+}
+
+/* line 199, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+input[type="text"] {
+    height: 24px;
+    margin-top: 5px;
+    border: 1px solid #d1d6da;
+}
+
+/* line 205, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+.selection-list {
+    vertical-align: bottom;
+    min-width: 90px;
+    margin-right: 15px;
+}
+    /* line 210, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+    .selection-list .selection-sink {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    /* line 216, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+    .selection-list .selection-list-options {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+/* line 224, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+body.dark .table-filter-overlay .table-filter-wrapper {
+    background-color: #343b3f;
+}
+    /* line 227, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+    body.dark .table-filter-overlay .table-filter-wrapper .table-filter-header {
+        background: #fff;
+    }
+    /* line 233, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+    body.dark .table-filter-overlay .table-filter-wrapper #mainDiv #content #contentHeader {
+        background: #292f33;
+        color: #b8b9b9;
+    }
+        /* line 238, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+        body.dark .table-filter-overlay .table-filter-wrapper #mainDiv #content #contentHeader #matchAnyAll {
+            display: inline;
+            float: right;
+        }
+    /* line 244, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+    body.dark .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv.highlighted {
+        background-color: #ddffdd;
+        -webkit-transition: all ease-in-out 0.4s;
+        transition: all ease-in-out 0.4s;
+    }
+    /* line 250, ../../app/skyportal/directives/table-filter/_table-filter.scss */
+    body.dark .table-filter-overlay .table-filter-wrapper #mainDiv #content .someDiv .rowWrapper .valueInput {
+        background-color: #343b3f;
+    }
+
+/* line 1, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+.script-runner-wrapper {
+    width: 100%;
+}
+    /* line 4, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    .script-runner-wrapper .script-runner-header {
+        height: 50px;
+        padding: 15px 3px 15px 18px;
+        border-bottom: 1px solid #aec9cf;
+        background-color: #fafafa;
+    }
+        /* line 10, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+        .script-runner-wrapper .script-runner-header .script-runner-title {
+            font-size: 20px;
+            color: #2e5083;
+            line-height: 1;
+        }
+        /* line 16, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+        .script-runner-wrapper .script-runner-header .selection-list {
+            float: right;
+            margin-right: 15px;
+        }
+            /* line 20, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-header .selection-list .selection-sink {
+                width: 163px;
+            }
+    /* line 26, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    .script-runner-wrapper .script-runner-main-wrapper {
+        background-color: #f1f4f9;
+        border-bottom: 1px solid #aec9cf;
+        margin-bottom: 15px;
+    }
+    /* line 32, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    .script-runner-wrapper .script-runner-main {
+        padding: 15px 15px 15px 14px;
+    }
+        /* line 35, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+        .script-runner-wrapper .script-runner-main .script-box-title {
+            float: left;
+            width: 5%;
+            color: #2e5083;
+            font-size: 12px;
+        }
+        /* line 42, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+        .script-runner-wrapper .script-runner-main #resizable {
+            height: 238px;
+            border: 1px solid #aec9cf;
+            position: relative;
+        }
+            /* line 47, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-main #resizable #editor {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+    /* line 57, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    .script-runner-wrapper .ace_search.right {
+        color: black;
+    }
+    /* line 61, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    .script-runner-wrapper .script-runner-footer {
+        padding: 0 15px 15px 14px;
+    }
+        /* line 64, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+        .script-runner-wrapper .script-runner-footer .script-runner-output-message {
+            height: 30px;
+            line-height: 30px;
+            color: #7c838b;
+            padding-left: 20px;
+            font-size: 11px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+            /* line 74, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-runner-output-message.output-message-success {
+                background: url("../../assets/images/output-message-success.png") 0 center no-repeat;
+            }
+            /* line 77, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-runner-output-message.output-message-info {
+                background: url("../../assets/images/output-message-info.png") 0 center no-repeat;
+            }
+            /* line 80, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-runner-output-message.output-message-warning {
+                background: url("../../assets/images/output-message-warning.png") 0 center no-repeat;
+            }
+            /* line 83, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-runner-output-message.output-message-error {
+                background: url("../../assets/images/output-message-error.png") 0 center no-repeat;
+                color: #e12601;
+            }
+        /* line 90, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+        .script-runner-wrapper .script-runner-footer .script-note {
+            float: left;
+        }
+            /* line 93, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-note .script-note-title {
+                color: #2e5083;
+                font-size: 12px;
+            }
+            /* line 98, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-note .selection-list {
+                margin-left: 14px;
+                width: 266px;
+            }
+                /* line 102, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+                .script-runner-wrapper .script-runner-footer .script-note .selection-list input {
+                    border: none;
+                    font-size: 12px;
+                    background-color: #f1f4f9;
+                    width: 220px;
+                }
+                    /* line 108, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+                    .script-runner-wrapper .script-runner-footer .script-note .selection-list input:focus {
+                        outline: none;
+                    }
+            /* line 114, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-note .x-button:before {
+                content: "x";
+                color: #5b779e;
+                font-family: monospace;
+            }
+            /* line 120, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-note .script-runner-output-message {
+                margin-left: 50px;
+                vertical-align: sub;
+            }
+        /* line 126, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+        .script-runner-wrapper .script-runner-footer .script-runner-buttons {
+            float: right;
+        }
+            /* line 129, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-runner-buttons .transparent-button {
+                border: 1px solid #4cc5e2;
+                background-color: transparent;
+                color: #4cc5e2;
+                width: 98px;
+                height: 26px;
+            }
+            /* line 137, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+            .script-runner-wrapper .script-runner-footer .script-runner-buttons .blue-button {
+                border: 1px solid #4cc5e2;
+                background-color: #4cc5e2;
+                color: #fff;
+                width: 80px;
+                height: 26px;
+                margin-left: 10px;
+            }
+    /* line 148, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    .script-runner-wrapper .query-timer-message {
+        margin: 0 0 21px 6%;
+    }
+
+/* line 156, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+body.dark .script-runner-wrapper .script-runner-header {
+    border-bottom: 1px solid #1c2125;
+    background-color: #272d31;
+}
+    /* line 160, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    body.dark .script-runner-wrapper .script-runner-header .script-runner-title {
+        color: #bfbfbf;
+    }
+/* line 171, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+body.dark .script-runner-wrapper .script-runner-main-wrapper {
+    background-color: #272d31;
+    border-bottom: 1px solid #1c2125;
+}
+/* line 178, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+body.dark .script-runner-wrapper .script-runner-main .script-box-title {
+    color: #bfbfbf;
+}
+/* line 187, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+body.dark .script-runner-wrapper .script-runner-footer .script-note {
+    padding-top: 10px;
+}
+    /* line 189, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    body.dark .script-runner-wrapper .script-runner-footer .script-note .script-note-title {
+        color: #bfbfbf;
+        line-height: 30px;
+    }
+    /* line 196, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    body.dark .script-runner-wrapper .script-runner-footer .script-note .selection-list input {
+        background-color: #272d31;
+    }
+    /* line 201, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+    body.dark .script-runner-wrapper .script-runner-footer .script-note .x-button:before {
+        color: #4cc5e2;
+    }
+/* line 208, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+body.dark .script-runner-wrapper .script-runner-footer .script-runner-buttons .transparent-button {
+    border: 1px solid #4cc5e2;
+    color: #4cc5e2;
+}
+/* line 213, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+body.dark .script-runner-wrapper .script-runner-footer .script-runner-buttons .blue-button {
+    border: 1px solid #4cc5e2;
+    background-color: #4cc5e2;
+    color: #13191b;
+}
+/* line 222, ../../app/skyportal/directives/script-runner/_script-runner.scss */
+body.dark .script-runner-wrapper .query-timer-message i, body.dark .script-runner-wrapper .query-timer-message span {
+    color: #bfbfbf;
+}
+
+/* line 3, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+.page-sidebar-wrapper .page-sidebar {
+    background-color: #373d46;
+    padding: 0;
+    line-height: 1;
+}
+    /* line 8, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+    .page-sidebar-wrapper .page-sidebar.closed {
+        width: 54px;
+    }
+    /* line 12, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+    .page-sidebar-wrapper .page-sidebar > ul.page-sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+        /* line 17, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+        .page-sidebar-wrapper .page-sidebar > ul.page-sidebar-menu > li {
+            border-bottom: 1px solid #292d34;
+        }
+            /* line 20, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+            .page-sidebar-wrapper .page-sidebar > ul.page-sidebar-menu > li a {
+                height: 49px;
+                font-size: 16px;
+                color: #fff;
+                padding: 18px 10px 18px 18px;
+                margin: 0;
+            }
+                /* line 27, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+                .page-sidebar-wrapper .page-sidebar > ul.page-sidebar-menu > li a.active {
+                    color: #4cc5e2;
+                }
+                /* line 31, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+                .page-sidebar-wrapper .page-sidebar > ul.page-sidebar-menu > li a i {
+                    width: 30px;
+                }
+            /* line 36, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+            .page-sidebar-wrapper .page-sidebar > ul.page-sidebar-menu > li.open > a {
+                color: #4cc5e2;
+                border-left: 4px solid #4cc5e2;
+                padding-left: 14px;
+            }
+        /* line 43, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+        .page-sidebar-wrapper .page-sidebar > ul.page-sidebar-menu ul {
+            background-color: #292d34;
+            padding: 9px 0;
+            margin: 0;
+        }
+            /* line 49, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+            .page-sidebar-wrapper .page-sidebar > ul.page-sidebar-menu ul li a {
+                font-size: 14px;
+                color: #b7c2d1;
+                padding: 18px 10px 18px 40px;
+            }
+
+/* line 61, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+body.dark .page-sidebar {
+    background-color: #1c2125;
+}
+    /* line 66, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+    body.dark .page-sidebar > ul.page-sidebar-menu > li {
+        border-bottom: 1px solid #14191c;
+    }
+        /* line 69, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+        body.dark .page-sidebar > ul.page-sidebar-menu > li a {
+            color: #a4a4a4;
+        }
+            /* line 72, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+            body.dark .page-sidebar > ul.page-sidebar-menu > li a.active {
+                color: #00efd5;
+            }
+        /* line 77, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+        body.dark .page-sidebar > ul.page-sidebar-menu > li.open > a {
+            color: #00efd5;
+            border-left: 4px solid #00efd5;
+        }
+    /* line 83, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+    body.dark .page-sidebar > ul.page-sidebar-menu ul {
+        background-color: #14191c;
+    }
+        /* line 87, ../../app/skyportal/directives/sidebar/_sidebar.scss */
+        body.dark .page-sidebar > ul.page-sidebar-menu ul li a {
+            color: #7a7a7a;
+        }
+
+/* line 1, ../../app/skyportal/directives/tooltip/_tooltip.scss */
+.tooltip {
+    z-index: 10000 !important;
+    left: 19.2rem;
+}
+    /* line 5, ../../app/skyportal/directives/tooltip/_tooltip.scss */
+    .tooltip.right .tooltip-inner {
+        max-width: 1000px;
+        color: #000;
+        background-color: #fff;
+        border: 0.1rem solid #7c838b;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /* line 17, ../../app/skyportal/directives/tooltip/_tooltip.scss */
+    .tooltip.right .tooltip-arrow {
+        border-right-color: #fff;
+        left: 0.2rem;
+    }
+        /* line 20, ../../app/skyportal/directives/tooltip/_tooltip.scss */
+        .tooltip.right .tooltip-arrow.border {
+            border-right-color: #7c838b;
+            left: 0;
+        }
+
+/* line 1, ../../app/skyportal/directives/tabs/_tabs.scss */
+.view-tabs {
+    width: 100%;
+}
+    /* line 4, ../../app/skyportal/directives/tabs/_tabs.scss */
+    .view-tabs ul.view-tabs-menu {
+        margin-bottom: 0;
+    }
+    /* line 8, ../../app/skyportal/directives/tabs/_tabs.scss */
+    .view-tabs .tabs-header {
+        height: 50px;
+        padding: 15px 3px 15px 18px;
+        border-bottom: 1px solid #dedede;
+        background-color: #fafafa;
+    }
+        /* line 15, ../../app/skyportal/directives/tabs/_tabs.scss */
+        .view-tabs .tabs-header .tabs-title {
+            font-size: 20px;
+            color: #2e5083;
+            line-height: 1;
+        }
+        /* line 21, ../../app/skyportal/directives/tabs/_tabs.scss */
+        .view-tabs .tabs-header .flr {
+            display: inline-block;
+        }
+            /* line 24, ../../app/skyportal/directives/tabs/_tabs.scss */
+            .view-tabs .tabs-header .flr .filterDropdown {
+                float: left;
+            }
+    /* line 30, ../../app/skyportal/directives/tabs/_tabs.scss */
+    .view-tabs .selection-list {
+        float: right;
+        margin-right: 15px;
+    }
+        /* line 34, ../../app/skyportal/directives/tabs/_tabs.scss */
+        .view-tabs .selection-list .selection-sink {
+            width: 180px;
+        }
+    /* line 39, ../../app/skyportal/directives/tabs/_tabs.scss */
+    .view-tabs ul {
+        list-style: none;
+        padding: 0;
+    }
+        /* line 43, ../../app/skyportal/directives/tabs/_tabs.scss */
+        .view-tabs ul li {
+            display: inline-block;
+            border: 1px solid #dedede;
+            border-top: none;
+            padding: 13px 10px 0 18px;
+            background-color: #f1f4f9;
+            min-width: 129px;
+            line-height: 1;
+        }
+            /* line 53, ../../app/skyportal/directives/tabs/_tabs.scss */
+            .view-tabs ul li a {
+                font-size: 14px;
+                color: #2e5083;
+                text-decoration: none;
+            }
+                /* line 58, ../../app/skyportal/directives/tabs/_tabs.scss */
+                .view-tabs ul li a:hover {
+                    text-decoration: none;
+                }
+                /* line 62, ../../app/skyportal/directives/tabs/_tabs.scss */
+                .view-tabs ul li a .counter {
+                    display: block;
+                    font-size: 40px;
+                }
+            /* line 69, ../../app/skyportal/directives/tabs/_tabs.scss */
+            .view-tabs ul li.active {
+                background-color: #fff;
+                border-bottom: none;
+            }
+                /* line 73, ../../app/skyportal/directives/tabs/_tabs.scss */
+                .view-tabs ul li.active a {
+                    color: #ff930b;
+                }
+
+/* line 83, ../../app/skyportal/directives/tabs/_tabs.scss */
+body.dark .view-tabs .tabs-header {
+    border-bottom: 1px solid #3a4145;
+    background-color: #343b3f;
+}
+    /* line 87, ../../app/skyportal/directives/tabs/_tabs.scss */
+    body.dark .view-tabs .tabs-header .tabs-title {
+        color: #7c838b;
+    }
+/* line 93, ../../app/skyportal/directives/tabs/_tabs.scss */
+body.dark .view-tabs ul li {
+    border: 1px solid #3a4145;
+    background-color: #272d31;
+}
+    /* line 97, ../../app/skyportal/directives/tabs/_tabs.scss */
+    body.dark .view-tabs ul li a {
+        color: #7c838b;
+    }
+    /* line 101, ../../app/skyportal/directives/tabs/_tabs.scss */
+    body.dark .view-tabs ul li.active {
+        background-color: #343b3f;
+        border-bottom: none;
+    }
+        /* line 104, ../../app/skyportal/directives/tabs/_tabs.scss */
+        body.dark .view-tabs ul li.active a {
+            color: #00efd5;
+        }
+
+/* line 1, ../../app/skyportal/directives/header/_header.scss */
+.page-header.navbar {
+    border-bottom: 1px solid #e7e9ec;
+    background-color: #fff;
+}
+    /* line 5, ../../app/skyportal/directives/header/_header.scss */
+    .page-header.navbar .page-logo {
+        background-color: #4cc5e2;
+        border-bottom: 1px solid #262b31;
+    }
+        /* line 9, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .page-logo #sideBarToggler {
+            position: relative;
+            top: 20px;
+            left: 25px;
+            cursor: pointer;
+        }
+            /* line 15, ../../app/skyportal/directives/header/_header.scss */
+            .page-header.navbar .page-logo #sideBarToggler i {
+                font-size: 20px;
+            }
+    /* line 21, ../../app/skyportal/directives/header/_header.scss */
+    .page-header.navbar .breadcrumbs {
+        margin-left: 14px;
+        padding-top: 23px;
+        font-size: 12px;
+        color: #4a5360;
+        display: inline-block;
+    }
+        /* line 28, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .breadcrumbs i.fa-angle-right {
+            padding: 0 8px;
+        }
+    /* line 33, ../../app/skyportal/directives/header/_header.scss */
+    .page-header.navbar .search-box {
+        float: right;
+        margin-right: 32px;
+        padding: 18px 8px 5px 10px;
+        border-bottom: 1px solid #d1d6da;
+        position: relative;
+    }
+        /* line 40, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .search-box:before, .page-header.navbar .search-box:after {
+            content: "";
+            background: #d1d6da;
+            position: absolute;
+            bottom: 0;
+            height: 30%;
+            width: 1px;
+        }
+        /* line 49, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .search-box:before {
+            left: 0;
+        }
+        /* line 53, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .search-box:after {
+            right: 0;
+        }
+        /* line 57, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .search-box input {
+            border: none;
+        }
+            /* line 60, ../../app/skyportal/directives/header/_header.scss */
+            .page-header.navbar .search-box input:focus {
+                outline: none;
+            }
+    /* line 66, ../../app/skyportal/directives/header/_header.scss */
+    .page-header.navbar .selection-list {
+        float: right;
+        margin-right: 16px;
+        margin-top: 12px;
+    }
+        /* line 72, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .selection-list .selection-sink {
+            border: none;
+        }
+            /* line 76, ../../app/skyportal/directives/header/_header.scss */
+            .page-header.navbar .selection-list .selection-sink:before, .page-header.navbar .selection-list .selection-sink:after {
+                content: none;
+            }
+            /* line 80, ../../app/skyportal/directives/header/_header.scss */
+            .page-header.navbar .selection-list .selection-sink span:first-child {
+                color: #4cc5e2;
+            }
+        /* line 85, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .selection-list .selection-list-options {
+            top: 38px;
+        }
+        /* line 89, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .selection-list img {
+            width: 33px;
+            height: 33px;
+            border-radius: 17px;
+            margin-right: 9px;
+        }
+        /* line 96, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .selection-list .arrow:before {
+            margin-left: 12px;
+            margin-top: 5px;
+        }
+    /* line 104, ../../app/skyportal/directives/header/_header.scss */
+    .page-header.navbar .switch-wrapper {
+        float: right;
+    }
+        /* line 109, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .switch-wrapper .switch label {
+            margin-bottom: 0;
+        }
+        /* line 113, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .switch-wrapper .switch .cmn-toggle {
+            position: absolute;
+            margin-left: -9999px;
+            visibility: hidden;
+        }
+            /* line 119, ../../app/skyportal/directives/header/_header.scss */
+            .page-header.navbar .switch-wrapper .switch .cmn-toggle + label {
+                display: block;
+                position: relative;
+                cursor: pointer;
+                outline: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+        /* line 127, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .switch-wrapper .switch input.cmn-toggle-round + label {
+            padding: 0.5px;
+            width: 30px;
+            height: 15px;
+            background-color: #dddddd;
+            border-radius: 30px;
+        }
+            /* line 134, ../../app/skyportal/directives/header/_header.scss */
+            .page-header.navbar .switch-wrapper .switch input.cmn-toggle-round + label:before,
+            .page-header.navbar .switch-wrapper .switch input.cmn-toggle-round + label:after {
+                display: block;
+                position: absolute;
+                top: 0.25px;
+                left: 0.25px;
+                bottom: 0.25px;
+                content: "";
+            }
+            /* line 143, ../../app/skyportal/directives/header/_header.scss */
+            .page-header.navbar .switch-wrapper .switch input.cmn-toggle-round + label:before {
+                right: 0.25px;
+                background-color: #f1f1f1;
+                border-radius: 15px;
+                -webkit-transition: background 0.1s;
+                transition: background 0.1s;
+            }
+            /* line 149, ../../app/skyportal/directives/header/_header.scss */
+            .page-header.navbar .switch-wrapper .switch input.cmn-toggle-round + label:after {
+                width: 13.5px;
+                background-color: #fff;
+                border-radius: 100%;
+                box-shadow: 0 0.5px 1.25px rgba(0, 0, 0, 0.3);
+                -webkit-transition: margin 0.1s;
+                transition: margin 0.1s;
+            }
+        /* line 156, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .switch-wrapper .switch input.cmn-toggle-round:checked + label:before {
+            background-color: #272822;
+        }
+        /* line 159, ../../app/skyportal/directives/header/_header.scss */
+        .page-header.navbar .switch-wrapper .switch input.cmn-toggle-round:checked + label:after {
+            margin-left: 15px;
+        }
+    /* line 166, ../../app/skyportal/directives/header/_header.scss */
+    .page-header.navbar .fa-power-off {
+        float: right;
+    }
+
+/* line 172, ../../app/skyportal/directives/header/_header.scss */
+body.dark .page-header.navbar {
+    border-bottom: 1px solid #353b3e;
+    background-color: #ffffff;
+}
+    /* line 176, ../../app/skyportal/directives/header/_header.scss */
+    body.dark .page-header.navbar .page-logo {
+        background-color: #ffffff;
+        border-bottom: 1px solid #14171a;
+    }
+    /* line 181, ../../app/skyportal/directives/header/_header.scss */
+    body.dark .page-header.navbar .breadcrumbs {
+        color: #242c31;
+    }
+    /* line 185, ../../app/skyportal/directives/header/_header.scss */
+    body.dark .page-header.navbar .search-box {
+        border-bottom: 1px solid #7c838b;
+    }
+        /* line 188, ../../app/skyportal/directives/header/_header.scss */
+        body.dark .page-header.navbar .search-box:before, body.dark .page-header.navbar .search-box:after {
+            background: #7c838b;
+        }
+
+@media screen and (max-width: 950px) {
+    /* line 196, ../../app/skyportal/directives/header/_header.scss */
+    .page-header.navbar .breadcrumbs {
+        display: none;
+    }
+
+    /* line 199, ../../app/skyportal/directives/header/_header.scss */
+    .navbar-collapse.collapse {
+        display: inline-block !important;
+    }
+}
+/* line 3, ../../app/skyportal/directives/table-view/_table-view.scss */
+.table-view-wrapper .table-first-header {
+    height: 59px;
+    padding-right: 18px;
+    border-bottom: 1px solid #dedede;
+}
+    /* line 8, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-first-header .filter-button, .table-view-wrapper .table-first-header .filter-cancel, .table-view-wrapper .table-first-header .refresh-button {
+        display: inline-block;
+        margin-top: 14px;
+        margin-left: 15px;
+        border: 1px solid #4cc5e2;
+        cursor: pointer;
+    }
+    /* line 16, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-first-header .filter-button {
+        padding: 6px 14px 6px 9px;
+        font-size: 14px;
+    }
+        /* line 20, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper .table-first-header .filter-button span {
+            color: #4cc5e2;
+        }
+    /* line 25, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-first-header .filter-cancel {
+        padding: 6px 5px;
+    }
+    /* line 29, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-first-header .refresh-button {
+        padding: 6px 9px;
+        color: #4cc5e2;
+    }
+    /* line 34, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-first-header #searchBox {
+        height: 36px;
+        margin-left: 18px;
+        border: 1px solid #4cc5e2;
+        padding: 0 7px;
+    }
+    /* line 41, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-first-header .rows-and-paging {
+        float: right;
+    }
+        /* line 44, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper .table-first-header .rows-and-paging.no-pagination {
+            margin-top: 18px;
+        }
+            /* line 47, ../../app/skyportal/directives/table-view/_table-view.scss */
+            .table-view-wrapper .table-first-header .rows-and-paging.no-pagination > span {
+                vertical-align: top;
+            }
+        /* line 53, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper .table-first-header .rows-and-paging .selection-list .arrow:before {
+            margin-left: 26px;
+        }
+    /* line 59, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-first-header .pagination-wrapper {
+        display: inline-block;
+        padding-left: 14px;
+        padding-top: 14px;
+    }
+        /* line 64, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper .table-first-header .pagination-wrapper .pagination {
+            margin: 0;
+            vertical-align: middle;
+        }
+            /* line 69, ../../app/skyportal/directives/table-view/_table-view.scss */
+            .table-view-wrapper .table-first-header .pagination-wrapper .pagination > li > a {
+                color: black;
+            }
+                /* line 72, ../../app/skyportal/directives/table-view/_table-view.scss */
+                .table-view-wrapper .table-first-header .pagination-wrapper .pagination > li > a.active {
+                    color: #ff930b;
+                }
+                /* line 76, ../../app/skyportal/directives/table-view/_table-view.scss */
+                .table-view-wrapper .table-first-header .pagination-wrapper .pagination > li > a.enabled {
+                    color: #4cc5e2;
+                    cursor: pointer;
+                }
+                /* line 80, ../../app/skyportal/directives/table-view/_table-view.scss */
+                .table-view-wrapper .table-first-header .pagination-wrapper .pagination > li > a.disabled {
+                    color: #ddd;
+                    cursor: default;
+                }
+/* line 90, ../../app/skyportal/directives/table-view/_table-view.scss */
+.table-view-wrapper .table-secondary-header {
+    height: 59px;
+    padding-right: 18px;
+}
+    /* line 94, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-secondary-header .save-button {
+        display: inline-block;
+        margin-top: 14px;
+        margin-left: 15px;
+        color: white;
+        background-color: #4cc5e2;
+        border: 1px solid #4cc5e2;
+        padding: 5px 22.75px;
+        font-size: 14px;
+    }
+    /* line 105, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-secondary-header .last-changed {
+        margin-left: 15px;
+        font-size: 12px;
+    }
+    /* line 110, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper .table-secondary-header .table-secondary-header-dropdowns {
+        float: right;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+        /* line 116, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper .table-secondary-header .table-secondary-header-dropdowns .selection-list {
+            margin-right: 16px;
+        }
+            /* line 120, ../../app/skyportal/directives/table-view/_table-view.scss */
+            .table-view-wrapper .table-secondary-header .table-secondary-header-dropdowns .selection-list .arrow:before {
+                margin-left: 26px;
+            }
+            /* line 124, ../../app/skyportal/directives/table-view/_table-view.scss */
+            .table-view-wrapper .table-secondary-header .table-secondary-header-dropdowns .selection-list:nth-child(1), .table-view-wrapper .table-secondary-header .table-secondary-header-dropdowns .selection-list:nth-child(2) {
+                width: 150px;
+            }
+        /* line 129, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper .table-secondary-header .table-secondary-header-dropdowns .arrows-button {
+            width: 29px;
+            height: 29px;
+            border: 1px solid #4cc5e2;
+            background-color: white;
+            color: #4cc5e2;
+        }
+/* line 139, ../../app/skyportal/directives/table-view/_table-view.scss */
+.table-view-wrapper #table1 {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+    /* line 146, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable .columnSorting.ascending::after {
+        content: '\2191';
+        color: red;
+        right: -6px;
+        top: -4px;
+    }
+    /* line 153, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable .columnSorting.descending::after {
+        content: '\2193';
+        color: red;
+        right: -6px;
+        top: -4px;
+    }
+    /* line 161, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable tbody tr:nth-child(2n+1) th {
+        background-color: #fff;
+    }
+    /* line 165, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable tbody tr:nth-child(2n) th, .table-view-wrapper #table1 .handsontable .handsontable tbody tr:nth-child(2n) td {
+        background-color: #fafafa;
+    }
+    /* line 170, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 200px;
+        font-weight: lighter;
+        color: #7c838b;
+        border: 0;
+        padding-right: 15px;
+    }
+        /* line 179, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper #table1 .handsontable td .htAutocompleteArrow {
+            width: 0;
+        }
+    /* line 185, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable thead tr th {
+        border: 0;
+        background-color: #fff;
+        color: #4a5360;
+        font-weight: bold;
+    }
+        /* line 191, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper #table1 .handsontable thead tr th:hover {
+            cursor: pointer;
+        }
+    /* line 197, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable tbody tr th {
+        border-color: transparent;
+        font-weight: lighter;
+        color: #7c838b;
+        border-right: 1px solid #d1d8e3;
+    }
+        /* line 205, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .table-view-wrapper #table1 .handsontable tbody tr th.dirtyRow {
+            cursor: pointer !important;
+            background-color: pink !important;
+            z-index: 150;
+            position: relative;
+        }
+    /* line 211, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable tbody tr td.dirtyRow {
+        background-color: pink !important;
+    }
+    /* line 216, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable tbody tr td.savedRow {
+        background-color: lightgreen !important;
+        -webkit-transition: opacity 2s ease-in-out;
+        -moz-transition: opacity 2s ease-in-out;
+        -ms-transition: opacity 2s ease-in-out;
+        -o-transition: opacity 2s ease-in-out;
+        opacity: 0.5;
+    }
+    /* line 226, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable tbody tr td.invalidCell, .table-view-wrapper #table1 .handsontable tbody tr.dirtyRow td.invalidCell {
+        background-color: red !important;
+        color: black;
+    }
+    /* line 232, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .table-view-wrapper #table1 .handsontable tbody tr.removedRow td {
+        text-decoration: line-through;
+    }
+
+/* line 240, ../../app/skyportal/directives/table-view/_table-view.scss */
+.htDatepickerHolder .now-button {
+    border: 1px solid #bbb;
+    border-top: none;
+    padding: 3px 10px;
+    cursor: pointer;
+    background-color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+    /* line 249, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .htDatepickerHolder .now-button:hover {
+        background-color: #33aaff;
+        color: #fff;
+    }
+
+/* line 256, ../../app/skyportal/directives/table-view/_table-view.scss */
+.red {
+    background-color: red !important;
+}
+
+/* line 260, ../../app/skyportal/directives/table-view/_table-view.scss */
+.blue {
+    background-color: blue;
+}
+
+/* line 268, ../../app/skyportal/directives/table-view/_table-view.scss */
+body.dark .table-view-wrapper .table-first-header {
+    border-bottom: 1px solid #14191c;
+    background-color: #343b3f;
+}
+    /* line 272, ../../app/skyportal/directives/table-view/_table-view.scss */
+    body.dark .table-view-wrapper .table-first-header .rows-per-page {
+        color: #7c838b;
+    }
+    /* line 276, ../../app/skyportal/directives/table-view/_table-view.scss */
+    body.dark .table-view-wrapper .table-first-header .filter-button, body.dark .table-view-wrapper .table-first-header .filter-cancel {
+        border: 1px solid #4cc5e2;
+    }
+    /* line 284, ../../app/skyportal/directives/table-view/_table-view.scss */
+    body.dark .table-view-wrapper .table-first-header .pagination-wrapper .pagination > li > a {
+        background-color: #343b3f;
+        color: #7c838b;
+        border-color: #14191c;
+    }
+        /* line 289, ../../app/skyportal/directives/table-view/_table-view.scss */
+        body.dark .table-view-wrapper .table-first-header .pagination-wrapper .pagination > li > a.active {
+            color: #00efd5;
+        }
+        /* line 293, ../../app/skyportal/directives/table-view/_table-view.scss */
+        body.dark .table-view-wrapper .table-first-header .pagination-wrapper .pagination > li > a.enabled {
+            color: #4cc5e2;
+        }
+/* line 302, ../../app/skyportal/directives/table-view/_table-view.scss */
+body.dark .table-view-wrapper .table-secondary-header {
+    background-color: #343b3f;
+}
+    /* line 306, ../../app/skyportal/directives/table-view/_table-view.scss */
+    body.dark .table-view-wrapper .table-secondary-header .last-changed {
+        color: #7c838b;
+    }
+    /* line 311, ../../app/skyportal/directives/table-view/_table-view.scss */
+    body.dark .table-view-wrapper .table-secondary-header .table-secondary-header-dropdowns .arrows-button {
+        border: 1px solid #4cc5e2;
+        color: #4cc5e2;
+        background-color: transparent;
+    }
+/* line 324, ../../app/skyportal/directives/table-view/_table-view.scss */
+body.dark .table-view-wrapper #table1 .handsontable td {
+    color: #bfbfbf;
+}
+/* line 329, ../../app/skyportal/directives/table-view/_table-view.scss */
+body.dark .table-view-wrapper #table1 .handsontable tbody tr:nth-child(2n+1) th, body.dark .table-view-wrapper #table1 .handsontable .handsontable tbody tr:nth-child(2n+1) td {
+    background-color: #343b3f;
+}
+/* line 334, ../../app/skyportal/directives/table-view/_table-view.scss */
+body.dark .table-view-wrapper #table1 .handsontable tbody tr:nth-child(2n) th, body.dark .table-view-wrapper #table1 .handsontable .handsontable tbody tr:nth-child(2n) td {
+    background-color: #3a4145;
+}
+/* line 339, ../../app/skyportal/directives/table-view/_table-view.scss */
+body.dark .table-view-wrapper #table1 .handsontable thead tr th {
+    border: 0;
+    background-color: #343b3f;
+    color: #bfbfbf;
+    font-weight: bold;
+}
+/* line 347, ../../app/skyportal/directives/table-view/_table-view.scss */
+body.dark .table-view-wrapper #table1 .handsontable tbody tr th {
+    color: #bfbfbf;
+    border-right: 1px solid #4b5053;
+}
+
+/* line 358, ../../app/skyportal/directives/table-view/_table-view.scss */
+.fullScreenOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    z-index: 10000;
+    width: 100%;
+    height: 100%;
+}
+    /* line 367, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .fullScreenOverlay #closeFullScreen {
+        z-index: 200;
+        background-color: transparent;
+        border: none;
+        float: right;
+        color: #4cc5e2;
+    }
+        /* line 374, ../../app/skyportal/directives/table-view/_table-view.scss */
+        .fullScreenOverlay #closeFullScreen .fa-times {
+            font-size: 28px;
+        }
+
+/* line 381, ../../app/skyportal/directives/table-view/_table-view.scss */
+body.dark .fullScreenOverlay {
+    background: #272d31;
+}
+
+/* line 390, ../../app/skyportal/directives/table-view/_table-view.scss */
+.columns-overflow .selection-list-options {
+    overflow: auto;
+    /*height: 300px;*/
+}
+    /* line 394, ../../app/skyportal/directives/table-view/_table-view.scss */
+    .columns-overflow .selection-list-options input {
+        float: right;
+    }
+
+/* line 400, ../../app/skyportal/directives/table-view/_table-view.scss */
+.htContextMenu {
+    z-index: 11000;
+}
+
+/* line 1, ../../app/skyportal/directives/table-form/_table-form.scss */
+.table-form-overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    padding: 150px 250px;
+}
+    /* line 11, ../../app/skyportal/directives/table-form/_table-form.scss */
+    .table-form-overlay .table-form-wrapper {
+        background-color: #fff;
+        border-radius: 0px;
+        max-height: 100%;
+        overflow: auto;
+        padding-bottom: 15px;
+    }
+        /* line 18, ../../app/skyportal/directives/table-form/_table-form.scss */
+        .table-form-overlay .table-form-wrapper .table-form-header {
+            height: 50px;
+            padding: 15px;
+            font-size: 20px;
+            background: #4cc5e2;
+            text-transform: uppercase;
+        }
+            /* line 25, ../../app/skyportal/directives/table-form/_table-form.scss */
+            .table-form-overlay .table-form-wrapper .table-form-header span {
+                display: inline-block;
+                font-size: 17px;
+                vertical-align: middle;
+            }
+        /* line 32, ../../app/skyportal/directives/table-form/_table-form.scss */
+        .table-form-overlay .table-form-wrapper .form-group {
+            padding: 15px;
+        }
+        /* line 36, ../../app/skyportal/directives/table-form/_table-form.scss */
+        .table-form-overlay .table-form-wrapper label {
+            float: left;
+            width: 20%;
+            margin-right: 10px;
+        }
+        /* line 42, ../../app/skyportal/directives/table-form/_table-form.scss */
+        .table-form-overlay .table-form-wrapper .selection-list {
+            min-width: 200px;
+        }
+            /* line 44, ../../app/skyportal/directives/table-form/_table-form.scss */
+            .table-form-overlay .table-form-wrapper .selection-list span {
+                font-size: 12px;
+                display: block;
+                width: 100%;
+            }
+/* line 49, ../../app/skyportal/directives/table-form/_table-form.scss */
+.selection-list-options .table-form-overlay .table-form-wrapper .selection-list span {
+    padding: 10px;
+}
+/* line 55, ../../app/skyportal/directives/table-form/_table-form.scss */
+.table-form-overlay .table-form-wrapper .form-control {
+    width: 40%;
+    border-radius: 0;
+    display: inline-block;
+}
+/* line 61, ../../app/skyportal/directives/table-form/_table-form.scss */
+.table-form-overlay .table-form-wrapper input[type="text"].form-control {
+    height: 32px;
+}
+/* line 65, ../../app/skyportal/directives/table-form/_table-form.scss */
+.table-form-overlay .table-form-wrapper input[type='checkbox'].form-control {
+    width: 24px;
+    height: 24px;
+}
+/* line 69, ../../app/skyportal/directives/table-form/_table-form.scss */
+.table-form-overlay .table-form-wrapper textarea.form-control {
+    max-width: 90%;
+}
+/* line 73, ../../app/skyportal/directives/table-form/_table-form.scss */
+.table-form-overlay .table-form-wrapper [class*='-button'] {
+    float: right;
+    margin-left: 10px;
+}
+    /* line 77, ../../app/skyportal/directives/table-form/_table-form.scss */
+    .table-form-overlay .table-form-wrapper [class*='-button'].now-button {
+        float: none;
+        display: inline-block;
+        text-align: center;
+        line-height: 32px;
+        min-width: 60px;
+    }
+
+/* line 1, ../../app/skyportal/pages/login/_login.scss */
+.loginOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #f1f4f9;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+    /* line 10, ../../app/skyportal/pages/login/_login.scss */
+    .loginOverlay .loginBox {
+        border: 1px solid #aec9cf;
+        background-color: #fff;
+        height: 300px;
+        width: 350px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -150px auto auto -175px;
+    }
+        /* line 23, ../../app/skyportal/pages/login/_login.scss */
+        .loginOverlay .loginBox .content {
+            height: 250px;
+            border-top: 4px solid #ff9000;
+        }
+            /* line 27, ../../app/skyportal/pages/login/_login.scss */
+            .loginOverlay .loginBox .content img {
+                display: block;
+                margin: 25px auto;
+            }
+            /* line 32, ../../app/skyportal/pages/login/_login.scss */
+            .loginOverlay .loginBox .content .login-form {
+                margin: auto;
+                width: 250px;
+                display: block;
+            }
+                /* line 37, ../../app/skyportal/pages/login/_login.scss */
+                .loginOverlay .loginBox .content .login-form .selection-list {
+                    margin-bottom: 18px;
+                    width: inherit;
+                }
+                    /* line 41, ../../app/skyportal/pages/login/_login.scss */
+                    .loginOverlay .loginBox .content .login-form .selection-list .selection-sink {
+                        border-bottom-color: #d2d7db;
+                    }
+                        /* line 45, ../../app/skyportal/pages/login/_login.scss */
+                        .loginOverlay .loginBox .content .login-form .selection-list .selection-sink:before, .loginOverlay .loginBox .content .login-form .selection-list .selection-sink:after {
+                            background: #d2d7db;
+                        }
+                        /* line 49, ../../app/skyportal/pages/login/_login.scss */
+                        .loginOverlay .loginBox .content .login-form .selection-list .selection-sink input {
+                            border: none;
+                            font-size: 12px;
+                            color: #1074a0;
+                        }
+                            /* line 54, ../../app/skyportal/pages/login/_login.scss */
+                            .loginOverlay .loginBox .content .login-form .selection-list .selection-sink input:focus {
+                                outline: none;
+                            }
+                /* line 61, ../../app/skyportal/pages/login/_login.scss */
+                .loginOverlay .loginBox .content .login-form .x-button {
+                    top: -5px;
+                }
+                    /* line 64, ../../app/skyportal/pages/login/_login.scss */
+                    .loginOverlay .loginBox .content .login-form .x-button:before {
+                        content: "x";
+                        color: #1074a0;
+                        font-family: monospace;
+                        font-size: x-large;
+                        font-weight: lighter;
+                    }
+            /* line 76, ../../app/skyportal/pages/login/_login.scss */
+            .loginOverlay .loginBox .content #optionsWrapper #rememberMeDiv {
+                float: left;
+                display: inline-block;
+            }
+                /* line 80, ../../app/skyportal/pages/login/_login.scss */
+                .loginOverlay .loginBox .content #optionsWrapper #rememberMeDiv input {
+                    margin-right: 6px;
+                }
+            /* line 85, ../../app/skyportal/pages/login/_login.scss */
+            .loginOverlay .loginBox .content #optionsWrapper button {
+                float: right;
+                padding: 5px 22.75px;
+                background-color: #4cc5e2;
+                border: 1px solid #4cc5e2;
+                color: #fff;
+            }
+        /* line 95, ../../app/skyportal/pages/login/_login.scss */
+        .loginOverlay .loginBox .forgotPasswordGroup {
+            border-top: 1px solid #d0d0d0;
+            height: 50px;
+            position: relative;
+        }
+            /* line 100, ../../app/skyportal/pages/login/_login.scss */
+            .loginOverlay .loginBox .forgotPasswordGroup a {
+                color: #4cc5e2;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+            }
+
+.projects-view-wrapper .projects-view-header {
+    height: 50px;
+    border-bottom: 1px solid #e7e9ec;
+    background-color: #fafafa;
+    padding: 10px 18px 0 15px;
+}
+
+    .projects-view-wrapper .projects-view-header .projects-view-title {
+        font-size: 20px;
+    }
+
+.new-button {
+    height: 28px;
+    color: white;
+    background-color: #4cc5e2;
+    border: 1px solid #4cc5e2;
+    font-size: 14px;
+    float: right;
+}
+
+.projects-view-stats {
+    color: #a6a5a5;
+    padding-left: 20px;
+}
+
+.projects-view-list {
+    padding: 30px 18px 0 15px;
+}
+
+.projects-view-item {
+    margin: 10px;
+    border: 1px solid #e7e9ec;
+}
+
+.projects-view-details-wrapper {
+    background-color: #f1f4f9;
+    width: 100%;
+}
+
+.projects-view-table {
+    width: 100%;
+}
+
+.projects-view-table-status {
+    width: 164px;
+    padding-left: 40px;
+    font-size: 18px;
+}
+
+.active-status {
+    color: #46a046;
+}
+
+.projects-view-table-info {
+    border-left: 1px solid black;
+}
+
+.projects-view-table-cells {
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+.projects-view-table-modif {
+    padding-left: 30px;
+    padding-top: 30px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.projects-view-buttons {
+    height: 48px;
+    background-color: #fafafa;
+    border-top: 1px solid black;
+}
+
+.projects-view-buttons-inner {
+    padding: 10px 10px 10px 30px;
+}
+
+.projects-view-buttons-right {
+    float: right;
+}
+
+.projects-view-button {
+    height: 28px;
+    color: #00c0ef;
+    background-color: transparent;
+    border: 1px solid #4cc5e2;
+    font-size: 14px;
+}
+
+.projects-view-button-new {
+    height: 28px;
+    color: white;
+    background-color: #4cc5e2;
+    border: 1px solid #4cc5e2;
+    font-size: 14px;
+}
+
+.delete-button {
+    height: 28px;
+    color: #e52600;
+    background-color: transparent;
+    border: 1px solid #e52600;
+    font-size: 14px;
+}
+
+.collapse-button {
+    display: inline-block;
+    width: 10px;
+    height: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    background: url('../assets/images/dropdown_horizontal.png') 0 0 no-repeat;
+}
+
+.expand-button {
+    display: inline-block;
+    width: 10px;
+    height: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    background: url('../assets/images/dropdown_down.png') 0 0 no-repeat;
+}
+
+.minimize-button {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    background: url('../assets/images/minimize_box.png') 0 0 no-repeat;
+}
+
+.maximize-button {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    background: url('../assets/images/icn_expand_box.png') 0 0 no-repeat;
+}
+
+.modifications-open {
+    display: inline-block;
+    width: 10px;
+    height: 15px;
+    background: url('../assets/images/dropdown_down.png') 0 0 no-repeat;
+}
+
+.modifications-close {
+    display: inline-block;
+    width: 12px;
+    height: 15px;
+    background: url('../assets/images/close_modifications.png') 0 0 no-repeat;
+}
+
+.modifications-label {
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.projects-view-wrapper .projects-view-details-wrapper .projects-view-status {
+    float: left;
+    width: 20%;
+}
+
+.projects-view-wrapper .projects-view-details-wrapper .projects-view-details {
+    float: left;
+    width: 80%;
+}
+
+.projects-view-wrapper .projects-view-details-wrapper .projects-view-info {
+    font-size: 12px;
+}
+
+.projects-view-wrapper .projects-view-details-wrapper .projects-view-modif {
+    font-size: 12px;
+}
+
+
+.new-project-wrapper {
+    padding-left: 45px;
+    padding-top: 75px;
+}
+
+    .new-project-wrapper .form-group {
+        min-height: 32px;
+        margin: 10px -15px;
+    }
+
+    .new-project-wrapper .control-label {
+        padding-left: 0;
+        padding-right: 0;
+        line-height: 22px;
+        color: #373d46;
+        font-size: 13px;
+    }
+
+.source-catalog-wrapper {
+    padding-left: 45px;
+}
+
+    .source-catalog-wrapper .source-catalog-title {
+        margin-top: 13px;
+        padding-bottom: 15px;
+        font-size: 24px;
+        color: #292d34;
+    }
+
+    .source-catalog-wrapper .source-catalog-item-wraper {
+        float: left;
+        /*width: 664px;*/
+    }
+
+    .source-catalog-wrapper .source-catalog-map-wraper {
+        float: left;
+    }
+
+    .source-catalog-wrapper .source-catalog-item-header {
+        padding-bottom: 10px;
+    }
+
+.source-catalog-item-header ul {
+    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+}
+
+    .source-catalog-item-header ul li {
+        display: inline-block;
+        line-height: 1;
+    }
+
+        .source-catalog-item-header ul li.active {
+            color: #ff9000;
+        }
+
+.source-catalog-item-header .title1 {
+    font-size: 12px;
+    color: #8f8f8f;
+}
+
+.source-catalog-item-header .productsLink {
+    padding-left: 80px;
+    color: #2e5183;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.source-catalog-item-header .mapsLink {
+    padding-left: 45px;
+    color: #2e5183;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/*.source-catalog-wrapper .source-catalog-item{*/
+/*min-height : 28px;*/
+/*max-height : 40px;*/
+/*!*width: 664px;*!*/
+/*border: 1px solid #e7e9ec;*/
+/*text-overflow: ellipsis;*/
+/*white-space: nowrap;*/
+/*overflow: hidden;*/
+/**/
+/*}*/
+
+.source-catalog-wrapper .source-catalog-map-prd {
+    float: left;
+}
+
+.source-catalog-wrapper .map-stat {
+    min-width: 20px;
+    padding-right: 15px;
+    float: left;
+}
+
+.source-catalog-wrapper .map-type {
+    min-width: 15px;
+    padding-right: 4px;
+    float: left;
+}
+
+.source-catalog-wrapper .source-catalog-name {
+    padding-right: 30px;
+    padding-left: 15px;
+    float: left;
+}
+
+.source-catalog-wrapper .source-catalog-desc {
+    float: left;
+}
+
+.source-catalog-wrapper .source-catalog-selected-title {
+    margin-left: 15px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    /*color: #8f8f8f;*/
+}
+
+.source-catalog-wrapper .source-catalog-selected {
+    border: 1px solid #e7e9ec;
+    margin-left: 15px;
+    padding: 10px 10px 0 10px;
+    min-width: 300px;
+    min-height: 400px;
+}
+
+
+
+.source-catalog-wrapper .map-close-button {
+    float: right;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.target-catalog-wrapper {
+    padding-left: 45px;
+}
+
+    .target-catalog-wrapper .target-catalog-map-wraper {
+        float: left;
+    }
+
+.map-header {
+    padding-bottom: 15px;
+}
+
+/*.map-head-b{*/
+/*font-size: 24px;*/
+/*color: #292d34;*/
+/*}*/
+
+/*.map-head-s{*/
+/*font-size: 13px;*/
+/*color: #292d34;*/
+/*}*/
+
+.map-item {
+    min-height: 28px;
+    border: 1px solid #e7e9ec;
+    margin-bottom: 10px;
+}
+
+.map-name {
+    padding-left: 20px;
+    font-size: 14px;
+    color: #2e5183;
+}
+
+.map-prd {
+    min-height: 28px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.target-catalog-wrapper .target-catalog-prd-wraper {
+    float: left;
+    margin-left: 15px;
+}
+
+
+
+.target-catalog-wrapper .target-catalog-desc {
+    float: left;
+}
+
+.target-catalog-wrapper .target-catalog-chk {
+    float: left;
+    border-right: 1px solid #e7e9ec;
+    min-height: 36px;
+    padding-top: 10px;
+}
+
+.product-info-wrapper .product-info-icons {
+    padding: 5px 5px 0 4px;
+    min-height: 36px;
+}
+
+    .product-info-wrapper .product-info-icons ul {
+        margin-bottom: 0;
+        list-style: none;
+        padding: 0;
+    }
+
+        .product-info-wrapper .product-info-icons ul li {
+            line-height: 1;
+            display: inline-block;
+            padding-left: 4px;
+        }
+
+            .product-info-wrapper .product-info-icons ul li.done {
+                background: url(../../assets/images/icn_done.png) 0 0 no-repeat;
+                width: 15px;
+                height: 15px;
+                top: 4px;
+                left: 4px;
+                background-size: 15px;
+                padding-right: 30px;
+            }
+
+            .product-info-wrapper .product-info-icons ul li.mapped {
+                background: url(../../assets/images/icn_mapped.png) 0 0 no-repeat;
+                width: 15px;
+                height: 15px;
+                top: 4px;
+                left: 4px;
+                background-size: 15px;
+                padding-right: 30px;
+            }
+
+            .product-info-wrapper .product-info-icons ul li.tv {
+                background: url(../../assets/images/icn_tv.png) 0 0 no-repeat;
+                width: 15px;
+                height: 15px;
+                top: 4px;
+                left: 4px;
+                background-size: 15px 15px;
+            }
+
+            .product-info-wrapper .product-info-icons ul li.internet {
+                background: url(../../assets/images/icn_internet.png) 0 0 no-repeat;
+                width: 15px;
+                height: 15px;
+                top: 4px;
+                left: 4px;
+                background-size: 15px 15px;
+            }
+
+            .product-info-wrapper .product-info-icons ul li.mobile {
+                background: url(../../assets/images/icn_mobile.png) 0 0 no-repeat;
+                width: 10px;
+                height: 15px;
+                top: 4px;
+                left: 4px;
+                background-size: 10px 15px;
+            }
+
+            .product-info-wrapper .product-info-icons ul li.line {
+                background: url(../../assets/images/icn_fixed_line.png) 0 0 no-repeat;
+                width: 15px;
+                height: 15px;
+                top: 4px;
+                left: 4px;
+                background-size: 15px 15px;
+            }
+
+            .product-info-wrapper .product-info-icons ul li.empty {
+                content: ' ';
+                width: 15px;
+                height: 15px;
+                top: 4px;
+                left: 4px;
+                background-size: 15px 15px;
+            }
+
+            .product-info-wrapper .product-info-icons ul li.status-empty {
+                content: ' ';
+                width: 15px;
+                height: 15px;
+                top: 4px;
+                left: 4px;
+                background-size: 15px 15px;
+                padding-right: 30px;
+            }
+
+.product-info-wrapper .product-info-attr {
+    padding: 5px 5px 5px 10px;
+}
+
+    .product-info-wrapper .product-info-attr .product-info-attr-txt {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 10px;
+        cursor: pointer;
+    }
+
+    .product-info-wrapper .product-info-attr .product-info-attr-point {
+        width: 10px;
+        height: 10px;
+    }
+
+.product-info-wrapper .product-info-icons ul li.product-name {
+    font-size: 13px;
+    color: #2e5183;
+}
+
+.product-info-wrapper .product-info-icons ul li.product-desc {
+    font-size: 13px;
+    color: #2e5183;
+    padding-left: 30px;
+}
+
+.project-map-wrapper {
+    width: 100%;
+    height: 100%;
+    padding-left: 45px;
+}
+
+    .project-map-wrapper .project-map-source {
+        float: left;
+    }
+
+    .project-map-wrapper .project-map-target {
+        float: right;
+        margin-right: 18px;
+    }
+
+    .project-map-wrapper .project-map-buttons {
+        padding-top: 5px;
+        padding-right: 5px;
+        height: 30px;
+    }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    padding: 150px;
+    color: #4a5360;
+}
+
+.map-func-wrapper {
+    position: relative;
+    min-height: 440px;
+    width: 710px;
+    padding: 0;
+    background-color: #fff;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.map-func-header {
+    height: 50px;
+    padding: 15px;
+    font-size: 20px;
+    background: #4cc5e2;
+}
+
+.modal-overlay .map-func-wrapper #bottomDiv {
+    margin-top: 15px;
+    position: absolute;
+    right: 15px;
+    left: 15px;
+    bottom: 15px;
+}
+
+    .modal-overlay .map-func-wrapper #bottomDiv #removeDiv {
+        float: left;
+    }
+
+    .modal-overlay .map-func-wrapper #bottomDiv #okCancelDiv {
+        float: right;
+    }
+
+    .modal-overlay .map-func-wrapper #bottomDiv button {
+        width: 82px;
+        height: 28px;
+    }
+
+/*@font-face {
+  font-family: 'Roboto';
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}*/
+/* line 25, _main_common.scss */
+html {
+    font-size: 10px;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+}
+    /* line 31, _main_common.scss */
+    html body {
+        background-color: #ffffff;
+        height: 100%;
+        width: 100%;
+        font-family: "Roboto", sans-serif;
+        min-width: 950px;
+    }
+        /* line 39, _main_common.scss */
+        html body .save-button, html body .ok-button, html body .now-button {
+            background-color: #4cc5e2;
+            border: 1px solid #4cc5e2;
+            color: #fff;
+            height: 32px;
+            min-width: 80px;
+        }
+        /* line 46, _main_common.scss */
+        html body .cancel-button {
+            background: transparent;
+            border: 1px solid #4cc5e2;
+            color: #4cc5e2;
+            height: 32px;
+            min-width: 80px;
+        }
+        /* line 55, _main_common.scss */
+        html body.dark {
+            background-color: #272d31;
+        }
+        /* line 60, _main_common.scss */
+        html body .fll {
+            float: left;
+        }
+        /* line 64, _main_common.scss */
+        html body .flr {
+            float: right;
+        }

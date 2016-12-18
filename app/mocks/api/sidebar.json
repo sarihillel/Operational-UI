@@ -1,0 +1,87 @@
+{
+  "sidebar": [
+    {
+      "COLUMN": "TRANSACTIONS",
+      "ISPK": false,
+      "PARAMETER": "TRANSACTIONS",
+      "TITLE": "Transactions",
+      "HTML": "",
+      "DISPLAY": true,
+      "DATA_TYPE": "",
+      "LENGTH": 1,
+      "DATA_DEFAULT": "",
+      "READONLY": false,
+      "REQUIRED": false,
+      "SEQUENCE": 1000,
+      "CSS1": "fa-exchange",
+      "CSS2": "",
+      "CSS3": "",
+      "PATTERN": "",
+      "URL": "operational.home.search.list",
+      "OPTIONS": "",
+      "HIDE_ARROW": "true",
+      "DATA_ARRAY": [
+        
+      ],
+      "DATA_OBJECT": "{}",
+      "EXT01": "",
+      "EXT02": "",
+      "EXT03": ""
+    },
+    {
+      "COLUMN": "TASKLIST",
+      "ISPK": false,
+      "PARAMETER": "TASKLIST",
+      "TITLE": "Task List",
+      "HTML": "",
+      "DISPLAY": true,
+      "DATA_TYPE": "",
+      "LENGTH": 1,
+      "DATA_DEFAULT": "",
+      "READONLY": false,
+      "REQUIRED": false,
+      "SEQUENCE": 1500,
+      "CSS1": "fa-list",
+      "CSS2": "",
+      "CSS3": "",
+      "PATTERN": "",
+      "URL": "operational.home.results",
+      "OPTIONS": "",
+      "HIDE_ARROW": "true",
+      "DATA_ARRAY": [
+        
+      ],
+      "DATA_OBJECT": "{}",
+      "EXT01": "",
+      "EXT02": "",
+      "EXT03": ""
+    },
+    {
+      "COLUMN": "DUMMY",
+      "ISPK": false,
+      "PARAMETER": "DUMMY",
+      "TITLE": "",
+      "HTML": "",
+      "DISPLAY": false,
+      "DATA_TYPE": "",
+      "LENGTH": 1,
+      "DATA_DEFAULT": "",
+      "READONLY": false,
+      "REQUIRED": false,
+      "SEQUENCE": 1500,
+      "CSS1": "",
+      "CSS2": "",
+      "CSS3": "",
+      "PATTERN": "",
+      "URL": "DUMMY",
+      "OPTIONS": "",
+      "DATA_ARRAY": [
+        
+      ],
+      "DATA_OBJECT": "{}",
+      "EXT01": "",
+      "EXT02": "",
+      "EXT03": ""
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<div class="page-header-inner">
+
+    <div class="page-logo">
+        <a href="Javascript:location.href = APPROOTDIRECTORY">
+            <img src="assets/images/logo.png" alt="logo" class="logo-default"/>
+        </a>
+        
+        <span id="sideBarToggler" ng-click="toggleSideBar()">
+            <i class="fa fa-bars"></i>
+        </span>
+    </div>
+
+    <dropdown-list data-selected="userName" is-username-selection-list="true">
+                <span data-ng-repeat="item in usernameSelectionListOptions"
+                      data-ng-click="usernameSelectionListItemClicked($index)">
+                            {{item}}
+                    <!--Theme toggler-->
+                <div class="switch-wrapper" ng-if="$index==0">
+
+                    <div class="switch">
+                        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox"
+                               ng-checked="isClear"/>
+                        <label></label>
+                    </div>
+                </div>
+                <!--logoff font-awesome icon-->
+                <i ng-if="$index==1" class="fa fa-power-off"></i>
+                </span>
+    </dropdown-list>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search"/>
+        <i class="fa fa-search"></i>
+    </div>
+</div>

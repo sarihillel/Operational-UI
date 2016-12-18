@@ -1,0 +1,203 @@
+<div class="transction-warp">
+    <div class="transaction-header">
+        <div class="row col-xs-12 row-title">
+            <div class="header-title">
+                <div class="error" ng-class="{'is-error' : transactionVm.data.isError}"></div>
+                {{::transactionVm.data.transactionCDM.Info.ClientCallingService}} {{::transactionVm.transactionID}}
+            </div>
+            <div class="header-buttons">
+                <button ng-click="transactionVm.saveData()" class="border-empty-button trans-button">
+                    <span ng-bind="'features.transaction.buttons.save' | translate"></span>
+                </button>
+                <button ng-click="transactionVm.reloadData()" class="border-empty-button trans-button">
+                    <span ng-bind="'features.transaction.buttons.refresh' | translate"></span>
+                </button>
+                <!--<button class="border-empty-button trans-button">
+                    <span ng-bind="'features.transaction.buttons.metroMap' | translate"></span>
+                </button>
+                <button class="border-empty-button trans-button">
+                    <span ng-bind="'features.transaction.buttons.history' | translate"></span>
+                </button>-->
+            </div>
+        </div>
+
+        <div class="transaction-info-wrapper">
+            <label class="trans-info-details-label"
+                   ng-bind="'features.transaction.info.clientTransId' | translate">
+            </label>
+            <span class="trans-info-detail-value">
+                {{transactionVm.data.transactionCDM.Info.ClientTransactionId}}
+            </span>
+
+            <label class="trans-info-details-label"
+                   ng-bind="'features.transaction.info.receiveDate' | translate">
+            </label>
+            <span class="trans-info-detail-value">
+                {{transactionVm.data.transactionCDM.Info.ReceiveDate | ouDateFormat}}
+            </span>
+            <label class="trans-info-details-label"
+                   ng-bind="'features.transaction.info.sourceSystem' | translate">
+            </label>
+            <span class="trans-info-detail-value">
+                {{transactionVm.data.transactionCDM.Info.SourceSystem}}
+            </span>
+            <label class="trans-info-details-label"
+                   ng-bind="'features.transaction.info.status' | translate">
+            </label>
+            <span class="trans-info-detail-value">
+                {{transactionVm.data.transactionCDM.Order.OrderStatus}}
+            </span>
+
+            <ou-popover ts-title="More details"
+                        class="trans-info-details-link more-details-info-wrapper"
+                        ts-visible="transactionVm.dropDownVisible"
+                        ts-width="400px">
+
+                <div class="row col-md-12 more-details-info more-details-first">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.clientIp' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.ClientIp}}</label>
+                    </div>
+                </div>
+
+                <div class="row col-md-12 more-details-info">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.clientHostName' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.ClientHostName}}</label>
+                    </div>
+                </div>
+                <div class="row col-md-12 more-details-info">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.clientCallingSvc' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.ClientCallingService}}</label>
+                    </div>
+                </div>
+                <div class="row col-md-12 more-details-info">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.callingSystem' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.CallingSystem}}</label>
+                    </div>
+                </div>
+                <div class="row col-md-12 more-details-info">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.salesChannel' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.SalesChannel}}</label>
+                    </div>
+                </div>
+                <div class="row col-md-12 more-details-info">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.correlationtId' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.CorrelationID}}</label>
+                    </div>
+                </div>
+                <div class="row col-md-12 more-details-info">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.timeStamp' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.TimeStamp}}</label>
+                    </div>
+                </div>
+                <div class="row col-md-12 more-details-info">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.S_CustomerId' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.S_CustomerID}}</label>
+                    </div>
+                </div>
+                <div class="row col-md-12 more-details-info">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.cdmTxId' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.CDMTxID}}</label>
+                    </div>
+                </div>
+                <div class="row col-md-12 more-details-info more-details-last">
+                    <div class="col-md-7">
+                        <label ng-bind="'features.transaction.moreDetails.cdmEntityType' | translate"
+                               class="trans-info-details-label"></label>
+                    </div>
+                    <div class="col-md-5">
+                        <label>{{transactionVm.data.transactionCDM.Info.CDMEntityType}}</label>
+                    </div>
+                </div>
+            </ou-popover>
+
+
+        </div>
+    </div>
+    <div class="row transaction-content">
+        <div class="col-xs-5 transaction-tabs">
+            <ou-tabs options="::transactionVm.tabsOptions"></ou-tabs>
+        </div>
+        <div class="col-xs-7 transaction-details">
+            <p ng-if="transactionVm.data.currentView.title" class="main-title"> {{transactionVm.data.currentView.title}}</p>
+            <!--important! we duplicate the same view for performance (not to do two way binding for the titles)-->
+            <div ng-switch="transactionVm.data.currentView.type">
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.order.views.general">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.order.views.sourceProduct">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.order.views.portingInfo">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.order.views.targetOrder">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.order.views.targetProduct">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.customer.views.customer">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.customer.views.contact">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.customer.views.location">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.customer.views.subscriber">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.customer.views.contract">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.billing.views.billingAccount">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.memo.views.memo">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>                
+                <div ng-switch-when-exp="transactionVm.data.tabsInfo.generalRequest.views.generalRequest">
+                    <ou-dynamic-form-group groups='transactionVm.data.currentView.view' options="::transactionVm.optionsView"></ou-dynamic-form-group>
+                </div>                  
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

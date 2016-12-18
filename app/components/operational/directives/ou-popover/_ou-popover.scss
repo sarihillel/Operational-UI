@@ -1,0 +1,47 @@
+.custom-pop-over {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    .custom-pop-over-sink {
+        padding: 0 8px 5px 10px;
+        position: relative;
+    }
+
+    .custom-pop-over-options {
+        display: table;
+        position: absolute;
+        top: 34px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        border: 1px solid #dddddd;
+        background-color: white;
+        cursor: auto;
+    }
+
+    .custom-pop-over-options:after, .custom-pop-over-options:before {
+        bottom: 100%;
+        left: 10%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .custom-pop-over-options:after {
+        border-color: rgba(221, 160, 69, 0);
+        border-bottom-color: #FFF;
+        border-width: 16px;
+        margin-left: -16px;
+    }
+
+    .custom-pop-over-options:before {
+        border-color: rgba(221, 221, 221, 0);
+        border-bottom-color: #DDDDDD;
+        border-width: 17px;
+        margin-left: -17px;
+    }
+}

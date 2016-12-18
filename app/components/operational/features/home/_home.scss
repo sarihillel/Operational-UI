@@ -1,0 +1,43 @@
+.projects-view-wrapper {
+
+    .projects-view-header {
+        height: 50px;
+        border-bottom: 1px solid #e7e9ec;
+
+        .projects-view-title {
+            font-size: 20px;
+        }
+
+        .projects-view-active {
+            color: #46a046;
+        }
+
+        .new-button {
+            display: inline-block;
+            color: white;
+            background-color: #4cc5e2;
+            padding: 5px 18px;
+            font-size: 14px;
+            float: right;
+        }
+    }
+}
+
+.page-header-fixed {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+
+.page-content-wrapper {
+    height: 100%;
+    overflow: auto;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    
+}

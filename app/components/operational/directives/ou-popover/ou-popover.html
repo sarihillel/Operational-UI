@@ -1,0 +1,8 @@
+<div class="custom-pop-over">
+    <div  ng-click="toggleSelectionList()">
+        <span> {{tsTitle}} </span>
+    </div>
+    <div class="custom-pop-over-options" ng-style="{width: tsWidth}" data-ng-show="tsVisible" >
+       <ng-transclude>
+    </div>
+</div>

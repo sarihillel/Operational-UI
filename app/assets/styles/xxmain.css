@@ -1,0 +1,161 @@
+html{
+    font-size: 10px;
+    height:100%;
+    widht:100%;
+}
+body{
+    background-color:#e9e9e9;
+    height:100%;
+    width:100%;
+}
+/********* header *******/
+header{
+    background-color:#0066a4;
+    height:13.3rem;
+    width:100%;
+    padding-left:3rem;
+    padding-top:3rem;
+    box-sizing: border-box;
+    margin-bottom: 3.5rem;
+}
+
+header h1{
+    color:white;
+    font-family: inherit;
+    height:3rem;
+    line-height:3rem;
+    font-size:3rem;
+    margin:0;
+    padding:0;
+}
+.header{
+    height:3.8rem;
+    width:100%;
+}
+
+nav div{
+
+    padding-left:2rem;
+    padding-right:2rem;
+    line-height:3.8rem;
+    color:white;
+    text-align: center;
+    font-size: 1.4rem;
+    font-family: arial, sans-serif;
+    float:left;
+    height:3.8rem;
+    margin-top:2rem;
+    position: relative;
+    border-radius:0.4rem;
+    cursor: pointer;
+}
+
+nav  .selected{
+    background-color:#004f80;
+    cursor: default;
+}
+
+.main{
+    padding-left:3rem;
+    width:100%;
+    height:100%;
+ }
+/********* info box ***************/
+
+.box{
+    border: 1px solid #cbcbcb;
+    border-radius: 0.5rem;
+    background-clip: padding-box;
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 rgba(0,0,0,.25);
+
+}
+.infoBox{
+    width:32.2rem;
+    height:46.1rem;
+}
+
+.infoBox .lower-infoBox{
+    background-color: #f1f1f1;
+    height:50%;
+    width:100%;
+    box-sizing: border-box;
+    border-top:1px solid #cccccc;
+}
+.infoBox .upper-infoBox{
+    height: 50%;
+    width:100%;
+    box-sizing: border-box;
+
+}
+
+/**************** messages *******************/
+.messagesBox{
+    widht:100%;
+    height:7.8rem;
+    padding-left:3rem;
+    padding-top:2.4rem;
+}
+
+.messagesBox .messages-plus{
+    height: 2.4rem;
+    width: 2.4rem;
+    color: white;
+    line-height: 2.4rem;
+    background-color: #0066a4;
+    display: inline-block;
+    text-align: center;
+    border-radius: 1.2rem;
+    font-size:2rem;
+    margin-right:1rem;
+}
+
+.messagesBox .message-header{
+    line-height:2.4rem;
+    font-size:2.4rem;
+    color:#1070aa;
+}
+/********************plan box*************************/
+.planBox{
+    widht:100%;
+    height:7.8rem;
+    padding-left:3rem;
+    margin-top:2.4rem;
+    padding-top:2.7rem;
+    padding-left:2.7rem;
+}
+.planBox .plan-header{
+    line-height:2.4rem;
+    font-size:2.4rem;
+    color:#404040;
+}
+
+/********* account transaction box ***************/
+
+
+.transactionBox{
+    width:100%;
+    height:60.1rem;
+}
+
+.transactionBox .upper-transactionBox{
+    background-color: #f1f1f1;
+    height:13.5rem;
+    width:100%;
+    box-sizing: border-box;
+    border-bottom:1px solid #cccccc;
+}
+.transactionBox .lower-transactionBox{
+    height: 50%;
+    width:100%;
+    box-sizing: border-box;
+    padding-left:3rem;
+    padding-top:3rem;
+
+}
+
+.transactionBox .transactionBox-header{
+    line-height:2.4rem;
+    font-size:2.4rem;
+    color:#404040;
+}
